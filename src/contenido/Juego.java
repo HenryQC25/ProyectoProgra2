@@ -28,6 +28,7 @@ public class Juego extends javax.swing.JFrame {
  private void imagenes(){
   this.scImagen(this.l1, "src/ImagenesP/dados.gif");
   this.scImagen(this.l2, "src/ImagenesP/botellaBPpsd.png");
+  this.scImagen(this.l4, "src/ImagenesP/among.png");
  }
     //
      
