@@ -5,10 +5,12 @@
  */
 package contenido;
 
+import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -18,19 +20,8 @@ public class Juego extends javax.swing.JFrame {
     //
     private ImageIcon imagen;
     private Icon icono;
-    private void scImagen(JLabel lbl, String ruta){
-    this.imagen = new ImageIcon(ruta);
-    this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(),Image.SCALE_DEFAULT)); 
-    lbl.setIcon(this.icono);
-    this.repaint();
-    }
-        // 
- private void imagenes(){
-  this.scImagen(this.l1, "src/ImagenesP/dados.gif");
-  this.scImagen(this.l2, "src/ImagenesP/botellaBPpsd.png");
-  this.scImagen(this.l4, "src/ImagenesP/among.png");
- }
-    //
+    
+    
      
  //constructor inicial
     public Juego() {
@@ -59,10 +50,11 @@ public class Juego extends javax.swing.JFrame {
         l8 = new javax.swing.JLabel();
         l9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        panelFondo = new fondoPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(191, 248, 223));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(195, 227, 230));
@@ -72,16 +64,16 @@ public class Juego extends javax.swing.JFrame {
         jPanel1.add(l1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 140, 60, 50));
 
         l2.setText("botella");
-        jPanel1.add(l2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 690, 50, 50));
+        jPanel1.add(l2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 860, 60, 60));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1820, 150, -1, -1));
 
         l4.setText("l1");
-        jPanel1.add(l4, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 700, 50, 50));
+        jPanel1.add(l4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 860, 70, 60));
 
         l5.setText("l1");
-        jPanel1.add(l5, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 730, 60, 50));
+        jPanel1.add(l5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 780, 60, 50));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1820, 300, -1, -1));
@@ -102,20 +94,43 @@ public class Juego extends javax.swing.JFrame {
         jPanel1.add(l8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1670, 550, 60, 50));
 
         l9.setText("l1");
-        jPanel1.add(l9, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 730, 60, 50));
+        jPanel1.add(l9, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 770, 60, 50));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 51));
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 680, 160, 30));
+        jButton1.setText("inicio");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 830, 180, 30));
+        jPanel1.add(panelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 1510, 890));
 
-        jButton2.setText("jButton1");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 840, 690));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, -60, 1900, 880));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, -60, 1890, 970));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+private void scImagen(JLabel lbl, String ruta){
+    this.imagen = new ImageIcon(ruta);
+    this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(),Image.SCALE_DEFAULT)); 
+    lbl.setIcon(this.icono);
+    this.repaint();
+    }
+//
+class fondoPanel extends JPanel {
+    Image imagen;
+   
+    public void paint(Graphics i){
+     imagen = new ImageIcon(getClass().getResource("/ImagenesP/tablero.jpg")).getImage();
+    i.drawImage(imagen,0,0,getWidth(),getHeight(),this);  setOpaque(false);  //getWidth() y getHeigth() adopta el tamaño del panel
+   super.paint(i); //pasa parametro i de la clase padre paint
+    } 
+    }    
+    fondoPanel fondo =new fondoPanel(); //sirve para editar desde el panel de diseño 
+        // 
+    
+ private void imagenes(){
+  this.scImagen(this.l1, "src/ImagenesP/dados.gif");
+  this.scImagen(this.l2, "src/ImagenesP/botella2.png");
+  this.scImagen(this.l4, "src/ImagenesP/among.png");
+  
+ }
+    //
    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -151,7 +166,6 @@ public class Juego extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -165,5 +179,6 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel l7;
     private javax.swing.JLabel l8;
     private javax.swing.JLabel l9;
+    private javax.swing.JPanel panelFondo;
     // End of variables declaration//GEN-END:variables
 }
