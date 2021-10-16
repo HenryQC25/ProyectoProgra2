@@ -7,13 +7,10 @@ package contenido;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.lang.Thread;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import contenido.jugador;
+
 import javax.swing.JPanel;
 
 /**
@@ -33,11 +30,12 @@ public class Juego extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); //para que aparezca en el centro
         imagenes();
-      seleccionarPersonaje();
+        seleccionarPersonaje();
         this.labD1.setVisible(false);
         this.labD2.setVisible(false);
         this.labDado.setVisible(false);
         this.botonturno.setEnabled(false);
+        this.HB1.setEnabled(true);this.HB2.setEnabled(false);HB3.setEnabled(false);HB4.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -62,7 +60,10 @@ public class Juego extends javax.swing.JFrame {
         labD2 = new javax.swing.JLabel();
         labD1 = new javax.swing.JLabel();
         cantidados = new javax.swing.JLabel();
-        casillaCarcel = new javax.swing.JLabel();
+        casillaCarcel1 = new javax.swing.JLabel();
+        casillaCarcel2 = new javax.swing.JLabel();
+        casillaCarcel3 = new javax.swing.JLabel();
+        casillaCarcel4 = new javax.swing.JLabel();
         botonturno = new javax.swing.JButton();
         HB4 = new javax.swing.JCheckBox();
         HB1 = new javax.swing.JCheckBox();
@@ -73,7 +74,7 @@ public class Juego extends javax.swing.JFrame {
         s3 = new javax.swing.JLabel();
         s4 = new javax.swing.JLabel();
         iniciarPartida = new javax.swing.JButton();
-        j5 = new javax.swing.JLabel();
+        jugadorTlb = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(191, 248, 223));
@@ -140,10 +141,10 @@ public class Juego extends javax.swing.JFrame {
             }
         });
         panelFondo.add(labDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 220, 180));
-        panelFondo.add(lab2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 830, 60, 60));
-        panelFondo.add(lab3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 890, 60, 50));
-        panelFondo.add(lab4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 890, 60, 50));
-        panelFondo.add(lab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 830, 70, 60));
+        panelFondo.add(lab2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 890, 60, 50));
+        panelFondo.add(lab3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 940, 60, 50));
+        panelFondo.add(lab4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 940, 60, 50));
+        panelFondo.add(lab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 890, 60, 50));
         panelFondo.add(labD2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, 90, 90));
         panelFondo.add(labD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 430, 90, 90));
 
@@ -151,14 +152,39 @@ public class Juego extends javax.swing.JFrame {
         cantidados.setForeground(new java.awt.Color(255, 0, 51));
         panelFondo.add(cantidados, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, -1, -1));
 
-        casillaCarcel.setBackground(new java.awt.Color(240, 22, 6));
-        casillaCarcel.setText("carcel");
-        casillaCarcel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        casillaCarcel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        casillaCarcel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        panelFondo.add(casillaCarcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 870, 190, 120));
+        casillaCarcel1.setBackground(new java.awt.Color(240, 22, 6));
+        casillaCarcel1.setText("carcel");
+        casillaCarcel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        casillaCarcel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        casillaCarcel1.setOpaque(true);
+        casillaCarcel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        panelFondo.add(casillaCarcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 780, 50, 40));
 
-        jPanel1.add(panelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 1510, 980));
+        casillaCarcel2.setBackground(new java.awt.Color(204, 255, 51));
+        casillaCarcel2.setText("carcel");
+        casillaCarcel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        casillaCarcel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        casillaCarcel2.setOpaque(true);
+        casillaCarcel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        panelFondo.add(casillaCarcel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 780, 50, 40));
+
+        casillaCarcel3.setBackground(new java.awt.Color(204, 255, 51));
+        casillaCarcel3.setText("carcel");
+        casillaCarcel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        casillaCarcel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        casillaCarcel3.setOpaque(true);
+        casillaCarcel3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        panelFondo.add(casillaCarcel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 820, 50, 40));
+
+        casillaCarcel4.setBackground(new java.awt.Color(240, 22, 6));
+        casillaCarcel4.setText("carcel");
+        casillaCarcel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        casillaCarcel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        casillaCarcel4.setOpaque(true);
+        casillaCarcel4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        panelFondo.add(casillaCarcel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 820, 50, 40));
+
+        jPanel1.add(panelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1530, 1000));
 
         botonturno.setBackground(new java.awt.Color(255, 255, 51));
         botonturno.setText("Terminar turno");
@@ -222,10 +248,10 @@ public class Juego extends javax.swing.JFrame {
         });
         jPanel1.add(iniciarPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 780, 200, 40));
 
-        j5.setText("jugador turno");
-        jPanel1.add(j5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1670, 960, 130, 50));
+        jugadorTlb.setText("jugador turno");
+        jPanel1.add(jugadorTlb, new org.netbeans.lib.awtextra.AbsoluteConstraints(1670, 920, 130, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 1890, 990));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 1890, 1000));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -329,20 +355,33 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     
    //////////////////////////////////////// 
     public final void habilitarJugador(){
+        
     if(HB1.isSelected()){
     selecJ1.setEnabled(true);
+    HB2.setEnabled(true);
     }else{
     selecJ1.setEnabled(false);selecJ1.setSelectedItem("Seleccionar");
+    selecJ2.setEnabled(false);selecJ2.setSelectedItem("Seleccionar");
+    HB2.setSelected(false);
+    HB2.setEnabled(false);
     }
-    if(HB2.isSelected()){
+    if(HB2.isSelected()&& HB2.isEnabled()){
     selecJ2.setEnabled(true);
+    HB3.setEnabled(true);
     }else{
     selecJ2.setEnabled(false);selecJ2.setSelectedItem("Seleccionar");
+    selecJ3.setEnabled(false);selecJ3.setSelectedItem("Seleccionar");
+    HB3.setSelected(false);
+    HB3.setEnabled(false);
     }
-     if(HB3.isSelected()){
+    if(HB3.isSelected()){
     selecJ3.setEnabled(true);
+    HB4.setEnabled(true);
     }else{
     selecJ3.setEnabled(false);selecJ3.setSelectedItem("Seleccionar");
+    selecJ4.setEnabled(false);selecJ4.setSelectedItem("Seleccionar");
+    HB4.setSelected(false);
+    HB4.setEnabled(false);
     }
       if(HB4.isSelected()){
     selecJ4.setEnabled(true);
@@ -360,6 +399,54 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     this.repaint();
     }
 /////////////////////////////////////////////////////////////////////
+    public void turnos(){
+    if(HB4.isSelected()&& HB1.isSelected()&& HB2.isSelected()&& HB3.isSelected()){    
+        switch (jugadorTlb.getText()) {
+            case "j1":
+                jugadorTlb.setText("j2");
+                break;
+            case "j2":
+                jugadorTlb.setText("j3");
+                break;
+            case "j3":
+                jugadorTlb.setText("j4");
+                break;
+            case "j4":
+                jugadorTlb.setText("j1");    
+                break;
+            default:
+                break;
+        }
+      }else
+     if(HB1.isSelected()&&HB2.isSelected()&&HB3.isSelected()){    
+        switch (jugadorTlb.getText()) {
+            case "j1":
+                jugadorTlb.setText("j2");
+                break;
+            case "j2":
+                jugadorTlb.setText("j3");
+                break;
+            case "j3":
+                jugadorTlb.setText("j1");       
+                break;
+            default:
+                break;
+        }
+      }else
+     if(HB1.isSelected()&&HB2.isSelected()){    
+   switch (jugadorTlb.getText()) {
+            case "j1":                
+            
+                jugadorTlb.setText("j2");                 
+                  break;
+            case "j2":               
+                 
+                jugadorTlb.setText("j1");               
+                 break;
+      }
+     }
+    }
+    //////////////////////////////////
     //metodos
     int x;int y;
     public JLabel getlab1(){
@@ -372,7 +459,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     }
      public JLabel getcasillaC(){
         
-        return casillaCarcel;
+        return casillaCarcel1;
     }
     
  ///////////////////////////////////////////////////////////////////   
@@ -385,21 +472,23 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     }//GEN-LAST:event_labDadoMouseClicked
 //terminarTurno boton
     private void botonturnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonturnoActionPerformed
+       
         this.labDado.setVisible(true);
         this.labD1.setVisible(false);
          this.labD2.setVisible(false);
-         this.cantidados.setText("");
-         
-        avanzar(lab1);
-        
- 
+         this.cantidados.setText("");   
+    
+    
+      turnos();
+  
+  
     }//GEN-LAST:event_botonturnoActionPerformed
 ////////////
    
 ////////////// 
    public void avanzar(JLabel lab){
-     int x1 = lab.getLocation().x;
-     int xc = casillaCarcel.getLocation().x;
+       
+      
            // Thread.sleep(500);
             
          //  lab.setLocation(lab.getLocation().x - 10,lab.getLocation().y);
@@ -410,18 +499,19 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
       // lab.getLocation().x-10;
       // lab.setLocation(0, lab.getLocation().y);
       
+      lab.setLocation(casillaCarcel1.getLocation().x, lab.getLocation().y);
           
-     for(int i=lab.getLocation().x ;i>=casillaCarcel.getLocation().x;i--){
+   /*  for(int i=lab.getLocation().x ;i>=casillaCarcel.getLocation().x;i--){
           lab.setLocation(i, lab.getLocation().y);
-     System.out.println(","+i);
+     
      
       }
       
       for(int i1=lab.getLocation().y ;i1>=casillaCarcel.getLocation().y;i1--){
           lab.setLocation(lab.getLocation().x, i1);
-     System.out.println(","+i1);
      
-      }
+     
+      }*/
    }
    
     
@@ -448,6 +538,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     this.botonturno.setEnabled(true);
     this.labDado.setVisible(true);
     this.iniciarPartida.setVisible(false);
+    this.jugadorTlb.setText("j1");
         
     }//GEN-LAST:event_iniciarPartidaActionPerformed
 
@@ -512,14 +603,17 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     private javax.swing.JCheckBox HB4;
     private javax.swing.JButton botonturno;
     private javax.swing.JLabel cantidados;
-    private javax.swing.JLabel casillaCarcel;
+    private javax.swing.JLabel casillaCarcel1;
+    private javax.swing.JLabel casillaCarcel2;
+    private javax.swing.JLabel casillaCarcel3;
+    private javax.swing.JLabel casillaCarcel4;
     private javax.swing.JButton iniciarPartida;
     private javax.swing.JLabel j1;
     private javax.swing.JLabel j2;
     private javax.swing.JLabel j3;
     private javax.swing.JLabel j4;
-    private javax.swing.JLabel j5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jugadorTlb;
     private javax.swing.JLabel lab1;
     private javax.swing.JLabel lab2;
     private javax.swing.JLabel lab3;
