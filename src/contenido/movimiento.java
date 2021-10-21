@@ -1,5 +1,5 @@
 
-package contenido;
+package contenido ;
 
 public class movimiento {
     int x;

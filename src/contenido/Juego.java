@@ -1,24 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package contenido;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author hquen
- */
+
+
 public class Juego extends javax.swing.JFrame {
-    //
+   ////////////////Para el movimiento
+    Timer time = new Timer();
+   ////////////////////////////
+    //variables temporales para llevar a clases jugadores
+   
+    int cont1=0;int cont2=0; int saldo=1500;
+    /////////////
+//constructor class jugador
+   jugador jugador1 = new jugador();
+   ///////////////////////////
+    /////////variable de imagen para ajustar y colocar en label 
     private ImageIcon imagen;
     private Icon icono;
     //variables dados
@@ -27,6 +33,7 @@ public class Juego extends javax.swing.JFrame {
      
  //constructor inicial
     public Juego() {
+        
         initComponents();
         setLocationRelativeTo(null); //para que aparezca en el centro
         imagenes();
@@ -61,9 +68,7 @@ public class Juego extends javax.swing.JFrame {
         labD1 = new javax.swing.JLabel();
         cantidados = new javax.swing.JLabel();
         casillaCarcel1 = new javax.swing.JLabel();
-        casillaCarcel2 = new javax.swing.JLabel();
-        casillaCarcel3 = new javax.swing.JLabel();
-        casillaCarcel4 = new javax.swing.JLabel();
+        tarjetasLab = new javax.swing.JLabel();
         botonturno = new javax.swing.JButton();
         HB4 = new javax.swing.JCheckBox();
         HB1 = new javax.swing.JCheckBox();
@@ -75,6 +80,11 @@ public class Juego extends javax.swing.JFrame {
         s4 = new javax.swing.JLabel();
         iniciarPartida = new javax.swing.JButton();
         jugadorTlb = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        saldo1 = new javax.swing.JLabel();
+        saldo2 = new javax.swing.JLabel();
+        saldo3 = new javax.swing.JLabel();
+        saldo4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(191, 248, 223));
@@ -85,16 +95,16 @@ public class Juego extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         j4.setText("jugador4");
-        jPanel1.add(j4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1670, 700, 60, 50));
+        jPanel1.add(j4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 630, 60, 50));
 
         j1.setText("jugador1");
-        jPanel1.add(j1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 60, 80, 30));
+        jPanel1.add(j1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 60, 80, 30));
 
         j2.setText("jugador2");
         jPanel1.add(j2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 250, 80, 30));
 
         j3.setText("jugador3");
-        jPanel1.add(j3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 490, 60, 50));
+        jPanel1.add(j3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 450, 60, 50));
 
         selecJ4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Botella", "Tecun", "among", "chucho" }));
         selecJ4.setEnabled(false);
@@ -103,7 +113,7 @@ public class Juego extends javax.swing.JFrame {
                 selecJ4ItemStateChanged(evt);
             }
         });
-        jPanel1.add(selecJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1780, 710, -1, -1));
+        jPanel1.add(selecJ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 700, -1, -1));
 
         selecJ1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Botella", "Tecun", "among", "chucho" }));
         selecJ1.setEnabled(false);
@@ -130,7 +140,7 @@ public class Juego extends javax.swing.JFrame {
                 selecJ3ItemStateChanged(evt);
             }
         });
-        jPanel1.add(selecJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1780, 500, -1, -1));
+        jPanel1.add(selecJ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1760, 510, -1, -1));
 
         panelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -150,7 +160,7 @@ public class Juego extends javax.swing.JFrame {
 
         cantidados.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         cantidados.setForeground(new java.awt.Color(255, 0, 51));
-        panelFondo.add(cantidados, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, -1, -1));
+        panelFondo.add(cantidados, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, 30, 20));
 
         casillaCarcel1.setBackground(new java.awt.Color(240, 22, 6));
         casillaCarcel1.setText("carcel");
@@ -158,31 +168,12 @@ public class Juego extends javax.swing.JFrame {
         casillaCarcel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         casillaCarcel1.setOpaque(true);
         casillaCarcel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        panelFondo.add(casillaCarcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 780, 50, 40));
+        panelFondo.add(casillaCarcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 910, 50, 40));
 
-        casillaCarcel2.setBackground(new java.awt.Color(204, 255, 51));
-        casillaCarcel2.setText("carcel");
-        casillaCarcel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        casillaCarcel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        casillaCarcel2.setOpaque(true);
-        casillaCarcel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        panelFondo.add(casillaCarcel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 780, 50, 40));
-
-        casillaCarcel3.setBackground(new java.awt.Color(204, 255, 51));
-        casillaCarcel3.setText("carcel");
-        casillaCarcel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        casillaCarcel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        casillaCarcel3.setOpaque(true);
-        casillaCarcel3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        panelFondo.add(casillaCarcel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 820, 50, 40));
-
-        casillaCarcel4.setBackground(new java.awt.Color(240, 22, 6));
-        casillaCarcel4.setText("carcel");
-        casillaCarcel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        casillaCarcel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        casillaCarcel4.setOpaque(true);
-        casillaCarcel4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        panelFondo.add(casillaCarcel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 820, 50, 40));
+        tarjetasLab.setBackground(new java.awt.Color(255, 204, 51));
+        tarjetasLab.setText("tarjetas y funciones");
+        tarjetasLab.setOpaque(true);
+        panelFondo.add(tarjetasLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 580, 170, 220));
 
         jPanel1.add(panelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1530, 1000));
 
@@ -201,7 +192,7 @@ public class Juego extends javax.swing.JFrame {
                 HB4StateChanged(evt);
             }
         });
-        jPanel1.add(HB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 670, -1, -1));
+        jPanel1.add(HB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 610, -1, -1));
 
         HB1.setText("habilitar");
         HB1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -209,7 +200,7 @@ public class Juego extends javax.swing.JFrame {
                 HB1StateChanged(evt);
             }
         });
-        jPanel1.add(HB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 30, -1, -1));
+        jPanel1.add(HB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 30, -1, -1));
 
         HB2.setText("habilitar");
         HB2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -225,19 +216,19 @@ public class Juego extends javax.swing.JFrame {
                 HB3StateChanged(evt);
             }
         });
-        jPanel1.add(HB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 460, -1, -1));
+        jPanel1.add(HB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 420, -1, -1));
 
         s1.setText("Personaje");
         jPanel1.add(s1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1780, 10, 90, 90));
 
         s2.setText("Personaje");
-        jPanel1.add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 200, 90, 90));
+        jPanel1.add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 180, 90, 90));
 
         s3.setText("Personaje");
-        jPanel1.add(s3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1780, 390, 90, 90));
+        jPanel1.add(s3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 370, 90, 90));
 
         s4.setText("Personaje");
-        jPanel1.add(s4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1780, 600, 90, 90));
+        jPanel1.add(s4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 560, 90, 90));
 
         iniciarPartida.setBackground(new java.awt.Color(255, 0, 0));
         iniciarPartida.setText("iniciar");
@@ -249,20 +240,35 @@ public class Juego extends javax.swing.JFrame {
         jPanel1.add(iniciarPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 780, 200, 40));
 
         jugadorTlb.setText("jugador turno");
-        jPanel1.add(jugadorTlb, new org.netbeans.lib.awtextra.AbsoluteConstraints(1670, 920, 130, 50));
+        jPanel1.add(jugadorTlb, new org.netbeans.lib.awtextra.AbsoluteConstraints(1610, 930, 130, 50));
+
+        jButton1.setText("Mover Pieza");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 940, -1, -1));
+
+        saldo1.setText("Q.1500");
+        jPanel1.add(saldo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 100, 100, 30));
+
+        saldo2.setText("Q.");
+        jPanel1.add(saldo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 290, 100, 30));
+
+        saldo3.setText("Q.");
+        jPanel1.add(saldo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 510, 100, 30));
+
+        saldo4.setText("Q.");
+        jPanel1.add(saldo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 690, 100, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 1890, 1000));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    
-
-    
-
-
     
 ////////////////////////////////////////////////////////////////
+    //Para el fondo de los Jpanel
     class fondoPanel extends JPanel {
     Image imagen;
     public void paint(Graphics i){
@@ -270,6 +276,7 @@ public class Juego extends javax.swing.JFrame {
     i.drawImage(imagen,0,0,getWidth(),getHeight(),this);  setOpaque(false);  //getWidth() y getHeigth() adopta el tamaño del panel
    super.paint(i); //pasa parametro i de la clase padre paint
     } 
+    
     }    
     fondoPanel fondo =new fondoPanel(); //sirve para editar desde el panel de diseño 
     ////////////////
@@ -282,22 +289,23 @@ public class Juego extends javax.swing.JFrame {
     } 
     }    
     fondoPanel1 fondo1 =new fondoPanel1(); //sirve para editar desde el panel de diseño 
-        // 
+        // hasta qui fondo de los jpanel
     /////////////////////////////////////
+    //funion muestra el gif y está para otras imagenes que deben resultar al inicio 
     private void imagenes(){
   this.scImagen(this.labDado, "src/ImagenesP/dados.gif");
-  
+
  }
-    ////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////
  //dados random del 1 al 6  
  public void dados(){
- dado1=(int)(Math.random()*6)+1;
- dado2=(int)(Math.random()*6)+1;
- String vD2 =String.valueOf(dado1); 
+ dado1=(int)(Math.random()*2)+1;
+ dado2=(int)(Math.random()*2)+1;
  resultado=dado1+dado2; String resultLab= String.valueOf(resultado);
  cantidados.setText(resultLab);
  }
 ///////// /////////////////////////////////////////////////
+ //funcion para mostrar imagen de dados dependiendo el numero que salga del 1 al 6
  public void carasDados(){
  int caraD1 = dado1;
  int caraD2 = dado2;
@@ -319,6 +327,7 @@ public class Juego extends javax.swing.JFrame {
  }
  }
   ///////////////////////////////
+ //opciones para seleccionar personaje
  public void seleccionarPersonaje(){
 String personaje1=selecJ1.getSelectedItem().toString();String personaje2=selecJ2.getSelectedItem().toString();
 String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4.getSelectedItem().toString();
@@ -350,12 +359,10 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
      case "among": this.scImagen(this.lab4, "src/ImagenesP/among.png");this.scImagen(this.s4, "src/ImagenesP/among.png");break;
      case "chucho": this.scImagen(this.lab4, "src/ImagenesP/chucho.png"); this.scImagen(this.s4, "src/ImagenesP/chucho.png");break;
  }
- 
  }
-    
    //////////////////////////////////////// 
-    public final void habilitarJugador(){
-        
+ //funcion para habilitar al jugador y su pieza  
+ public final void habilitarJugador(){  
     if(HB1.isSelected()){
     selecJ1.setEnabled(true);
     HB2.setEnabled(true);
@@ -364,7 +371,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     selecJ2.setEnabled(false);selecJ2.setSelectedItem("Seleccionar");
     HB2.setSelected(false);
     HB2.setEnabled(false);
-    }
+    } 
     if(HB2.isSelected()&& HB2.isEnabled()){
     selecJ2.setEnabled(true);
     HB3.setEnabled(true);
@@ -373,7 +380,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     selecJ3.setEnabled(false);selecJ3.setSelectedItem("Seleccionar");
     HB3.setSelected(false);
     HB3.setEnabled(false);
-    }
+    } 
     if(HB3.isSelected()){
     selecJ3.setEnabled(true);
     HB4.setEnabled(true);
@@ -387,8 +394,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     selecJ4.setEnabled(true);
     }else{
     selecJ4.setEnabled(false);selecJ4.setSelectedItem("Seleccionar");
-    }
-    
+    }    
     }
     //////////////////////////////////////////////////////////////////
     // esta funcion ajusta imagen y permite colocar en varios label
@@ -399,6 +405,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     this.repaint();
     }
 /////////////////////////////////////////////////////////////////////
+    //genera turnos y de guia muestra en un label el turno de cada jugador
     public void turnos(){
     if(HB4.isSelected()&& HB1.isSelected()&& HB2.isSelected()&& HB3.isSelected()){    
         switch (jugadorTlb.getText()) {
@@ -446,80 +453,160 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
       }
      }
     }
-    //////////////////////////////////
-    //metodos
-    int x;int y;
-    public JLabel getlab1(){
+    /////////////////////////////////
+    String pos; ;
+    public void moverPieza1(JLabel lab, int cont){
         
-        return lab1;
+         pos=String.valueOf(cont); 
+        System.out.println(cont);
+        switch (pos) {
+            case "1":
+                lab.setLocation(1210,910);
+                break;
+            case "2":
+                lab.setLocation(1080,910);
+                break;
+            case "3":
+                lab.setLocation(960,910);
+                break;
+            case "4":
+                lab.setLocation(840,910);
+                break;
+            case "5":
+                lab.setLocation(710,910);
+                break;
+            case "6":
+                lab.setLocation (590,910);
+                break;
+            case "7":
+                lab.setLocation(460,910);
+                break;
+            case "8":
+                lab.setLocation(340,910);
+                break;
+            case "9":
+                lab.setLocation(210,910);
+                break;
+            case "10":
+                lab.setLocation(40,890);
+                break;
+            case "11":
+                lab.setLocation(30,786);
+                break;
+            case "12":
+                lab.setLocation(30, 703);
+                break;
+            case "13":
+                lab.setLocation(30,621);
+                break;
+            
+        }
     }
-    public JLabel getlab2(){
-        
-        return lab2;
+    //////////////
+    void verificar(){
+    int i=JOptionPane.showConfirmDialog(null, "desea comprar zoo aurora");
+    if(i==0){
+    saldo=saldo-60;
+    saldo1.setText("Q"+saldo);
     }
-     public JLabel getcasillaC(){
-        
-        return casillaCarcel1;
+    }
+    //////
+    public void tarjetasCasilla(){
+    switch(pos){
+        case "1": JOptionPane.showConfirmDialog(null, "desea comprar el safari chapin");break;
+         case "2": JOptionPane.showMessageDialog(null, "le toca vanzar");  ;break;
+        case "3": verificar();break;
     }
     
+    
+    
+    }
+    /////////////////////////////////
+    /*static int cant=0; int resultadoP;
+    TimerTask task;
+    //genera el movimiento de la pieza
+    public void moverPieza(JLabel lab){
+        cant=0;
+    TimerTask task = new TimerTask(){
+      
+    @Override
+    public void run(){
+       cant++; 
+        resultado--;
+        
+         if(cant==1 && resultado>=0){
+         lab.setLocation(1210,910);
+         }else if(cant==2 && resultado>=0){
+         lab.setLocation(1080,910);
+         }else if(cant==3 && resultado>=0 ){
+         lab.setLocation(960,910); 
+         }else if(cant==4 && resultado>=0){
+         lab.setLocation(840,910);
+         }else if(cant==5 && resultado>=0){
+         lab.setLocation(710,910);
+         }else if(cant==6 && resultado>=0){
+         lab.setLocation (590,910);
+         }else if(cant==7 && resultado>=0){
+         lab.setLocation(460,910);
+         }else if(cant==8 && resultado>=0){
+         lab.setLocation(340,910); 
+         }else if(cant==9 && resultado>=0){
+         lab.setLocation(210,910);
+         }else if(cant==10 && resultado>=0){
+         lab.setLocation(40,890);
+         } else if(cant==11 && resultado>=0){
+         lab.setLocation(30,786); 
+         }else if(cant==12 && resultado>=0){
+         lab.setLocation(30, 703);
+         }else if(cant==13 && resultado>=0){
+         lab.setLocation(30,621);
+         } 
+      }     
+     };
+     time.scheduleAtFixedRate(task, 1000, 700); 
+    }*/
+    ///////////
+    //funciones de cada casilla
  ///////////////////////////////////////////////////////////////////   
 //evento click label de gif dados
     private void labDadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labDadoMouseClicked
-          this.labD1.setVisible(true);
+         
+        this.labD1.setVisible(true);
          this.labD2.setVisible(true);
         dados(); carasDados();
        this.labDado.setVisible(false);
-    }//GEN-LAST:event_labDadoMouseClicked
-//terminarTurno boton
-    private void botonturnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonturnoActionPerformed
        
+        
+           
+               
+             
+            
+       
+    }//GEN-LAST:event_labDadoMouseClicked
+/////////////////
+    //termina el turno del jugador e inicia el siguiente
+  
+  
+    private void botonturnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonturnoActionPerformed
+      //  int resp1 = Integer.parseInt(cantidados.getText());
+      
         this.labDado.setVisible(true);
         this.labD1.setVisible(false);
          this.labD2.setVisible(false);
-         this.cantidados.setText("");   
-    
-    
-      turnos();
-  
-  
-    }//GEN-LAST:event_botonturnoActionPerformed
-////////////
-   
-////////////// 
-   public void avanzar(JLabel lab){
-       
-      
-           // Thread.sleep(500);
-            
-         //  lab.setLocation(lab.getLocation().x - 10,lab.getLocation().y);
-         
-            //int i=x1-50;   
-            //lab.setLocation(i,lab.getLocation().y);
-      
-      // lab.getLocation().x-10;
-      // lab.setLocation(0, lab.getLocation().y);
-      
-      lab.setLocation(casillaCarcel1.getLocation().x, lab.getLocation().y);
-          
-   /*  for(int i=lab.getLocation().x ;i>=casillaCarcel.getLocation().x;i--){
-          lab.setLocation(i, lab.getLocation().y);
-     
-     
-      }
-      
-      for(int i1=lab.getLocation().y ;i1>=casillaCarcel.getLocation().y;i1--){
-          lab.setLocation(lab.getLocation().x, i1);
-     
-     
-      }*/
-   }
-   
-    
-    
-    private void selecJ1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_selecJ1ItemStateChanged
-    
-         seleccionarPersonaje();
+         this.cantidados.setText("");       
         
+         turnos();
+          
+    
+    
+    
+    }//GEN-LAST:event_botonturnoActionPerformed
+////////////  
+    
+////////////// 
+    //estos eventos son para los combobox y seleccionar imagen de personaje
+    private void selecJ1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_selecJ1ItemStateChanged
+         seleccionarPersonaje();        
     }//GEN-LAST:event_selecJ1ItemStateChanged
 
     private void selecJ2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_selecJ2ItemStateChanged
@@ -533,15 +620,20 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     private void selecJ4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_selecJ4ItemStateChanged
       seleccionarPersonaje();
     }//GEN-LAST:event_selecJ4ItemStateChanged
-
+/////////
+    //boton para iniciar partida
     private void iniciarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarPartidaActionPerformed
     this.botonturno.setEnabled(true);
     this.labDado.setVisible(true);
     this.iniciarPartida.setVisible(false);
     this.jugadorTlb.setText("j1");
-        
+    //HB1.setVisible(false);HB2.setVisible(false);HB3.setVisible(false);HB4.setVisible(false);
+    /*float cont=15;
+    jugador1.setSaldo(cont);
+    System.out.println(jugador1.getSaldo());*/
     }//GEN-LAST:event_iniciarPartidaActionPerformed
-
+////////////
+    //estos eventos permiten habilitar a los jugadores 
     private void HB2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_HB2StateChanged
       habilitarJugador();
     }//GEN-LAST:event_HB2StateChanged
@@ -557,14 +649,34 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     private void HB4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_HB4StateChanged
         habilitarJugador();
     }//GEN-LAST:event_HB4StateChanged
-
-    
-
-    
- 
- 
 ////
+    int x; int y;  int cant; 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     
+    
+  
+     
+        try{
+            cant=Integer.parseInt(cantidados.getText()); 
+            System.out.println(cont1);
+         switch(jugadorTlb.getText()){
+             case "j1": cont1=cont1+cant;moverPieza1(lab1,cont1);break;
+             case "j2":  cont2=cont2+cant;moverPieza1(lab2,cont2);break;
+         
+         }
+         
+      x=lab1.getX();
+      y=lab1.getY();
+      tarjetasCasilla();
+     }catch(Exception e){
+     JOptionPane.showMessageDialog(null, "debe tirar dados");
+     }
+    }//GEN-LAST:event_jButton1ActionPerformed
+///////////////////////////////
+    
+   //main del juego
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -604,14 +716,12 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     private javax.swing.JButton botonturno;
     private javax.swing.JLabel cantidados;
     private javax.swing.JLabel casillaCarcel1;
-    private javax.swing.JLabel casillaCarcel2;
-    private javax.swing.JLabel casillaCarcel3;
-    private javax.swing.JLabel casillaCarcel4;
     private javax.swing.JButton iniciarPartida;
     private javax.swing.JLabel j1;
     private javax.swing.JLabel j2;
     private javax.swing.JLabel j3;
     private javax.swing.JLabel j4;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jugadorTlb;
     private javax.swing.JLabel lab1;
@@ -626,9 +736,14 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     private javax.swing.JLabel s2;
     private javax.swing.JLabel s3;
     private javax.swing.JLabel s4;
+    private javax.swing.JLabel saldo1;
+    private javax.swing.JLabel saldo2;
+    private javax.swing.JLabel saldo3;
+    private javax.swing.JLabel saldo4;
     private javax.swing.JComboBox<String> selecJ1;
     private javax.swing.JComboBox<String> selecJ2;
     private javax.swing.JComboBox<String> selecJ3;
     private javax.swing.JComboBox<String> selecJ4;
+    private javax.swing.JLabel tarjetasLab;
     // End of variables declaration//GEN-END:variables
 }
