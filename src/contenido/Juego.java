@@ -19,7 +19,7 @@ public class Juego extends javax.swing.JFrame {
    ////////////////////////////
     //variables temporales para llevar a clases jugadores
    
-    int cont1=0;int cont2=0; int saldo=1500;
+    int cont1=0;int cont2=0; int saldo=1500;int cant; 
     /////////////
 //constructor class jugador
    jugador jugador1 = new jugador();
@@ -42,7 +42,9 @@ public class Juego extends javax.swing.JFrame {
         this.labD2.setVisible(false);
         this.labDado.setVisible(false);
         this.botonturno.setEnabled(false);
+        this.jButton1.setEnabled(false);
         this.HB1.setEnabled(true);this.HB2.setEnabled(false);HB3.setEnabled(false);HB4.setEnabled(false);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -299,8 +301,8 @@ public class Juego extends javax.swing.JFrame {
  ////////////////////////////////////////////////////////
  //dados random del 1 al 6  
  public void dados(){
- dado1=(int)(Math.random()*2)+1;
- dado2=(int)(Math.random()*2)+1;
+ dado1=(int)(Math.random()*6)+1;
+ dado2=(int)(Math.random()*6)+1;
  resultado=dado1+dado2; String resultLab= String.valueOf(resultado);
  cantidados.setText(resultLab);
  }
@@ -436,11 +438,11 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             case "j3":
                 jugadorTlb.setText("j1");       
                 break;
-            default:
-                break;
+            
         }
       }else
      if(HB1.isSelected()&&HB2.isSelected()){    
+         
    switch (jugadorTlb.getText()) {
             case "j1":                
             
@@ -454,52 +456,41 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
      }
     }
     /////////////////////////////////
-    String pos; ;
-    public void moverPieza1(JLabel lab, int cont){
-        
-         pos=String.valueOf(cont); 
+   public void moverPieza2(int cont){
+   switch (cont) {
+            case 1:lab2.setLocation(1270,910);break;
+            case 2:lab2.setLocation(1140,910);break;
+            case 3:lab2.setLocation(1020,910);break;
+            case 4:lab2.setLocation(900,910);break;
+            case 5:lab2.setLocation(770,910);break;
+            case 6:lab2.setLocation(650,910);break;
+            case 7:lab2.setLocation(520,910);break;
+            case 8:lab2.setLocation(400,910);break;
+            case 9:lab2.setLocation(270,910);break;
+            case 10:lab2.setLocation(100,890);break;
+            case 11:lab2.setLocation(90,786);break;
+            case 12:lab2.setLocation(90,703);break;
+            case 13:lab2.setLocation(90,621);break; 
+   }
+   }
+    public void moverPieza1( int cont){  
         System.out.println(cont);
-        switch (pos) {
-            case "1":
-                lab.setLocation(1210,910);
-                break;
-            case "2":
-                lab.setLocation(1080,910);
-                break;
-            case "3":
-                lab.setLocation(960,910);
-                break;
-            case "4":
-                lab.setLocation(840,910);
-                break;
-            case "5":
-                lab.setLocation(710,910);
-                break;
-            case "6":
-                lab.setLocation (590,910);
-                break;
-            case "7":
-                lab.setLocation(460,910);
-                break;
-            case "8":
-                lab.setLocation(340,910);
-                break;
-            case "9":
-                lab.setLocation(210,910);
-                break;
-            case "10":
-                lab.setLocation(40,890);
-                break;
-            case "11":
-                lab.setLocation(30,786);
-                break;
-            case "12":
-                lab.setLocation(30, 703);
-                break;
-            case "13":
-                lab.setLocation(30,621);
-                break;
-            
+       
+       switch (cont) {
+            case 1:lab1.setLocation(1210,910);break;
+            case 2:lab1.setLocation(1080,910);break;
+            case 3:lab1.setLocation(960,910);break;
+            case 4:lab1.setLocation(840,910);break;
+            case 5:lab1.setLocation(710,910);break;
+            case 6:lab1.setLocation (590,910);break;
+            case 7:lab1.setLocation(460,910);break;
+            case 8:lab1.setLocation(340,910);break;
+            case 9:lab1.setLocation(210,910);break;
+            case 10:lab1.setLocation(40,890);break;
+            case 11:lab1.setLocation(30,786);break;
+            case 12:lab1.setLocation(30, 703);break;
+            case 13:lab1.setLocation(30,621);break; 
+           
         }
     }
     //////////////
@@ -512,61 +503,14 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     }
     //////
     public void tarjetasCasilla(){
-    switch(pos){
-        case "1": JOptionPane.showConfirmDialog(null, "desea comprar el safari chapin");break;
-         case "2": JOptionPane.showMessageDialog(null, "le toca vanzar");  ;break;
-        case "3": verificar();break;
+    switch(cont1){
+        case 1: JOptionPane.showConfirmDialog(null, "desea comprar el safari chapin");break;
+         case 2: JOptionPane.showMessageDialog(null, "le toca vanzar");  ;break;
+        case 3: verificar();break;
     }
-    
-    
-    
     }
     /////////////////////////////////
-    /*static int cant=0; int resultadoP;
-    TimerTask task;
-    //genera el movimiento de la pieza
-    public void moverPieza(JLabel lab){
-        cant=0;
-    TimerTask task = new TimerTask(){
-      
-    @Override
-    public void run(){
-       cant++; 
-        resultado--;
-        
-         if(cant==1 && resultado>=0){
-         lab.setLocation(1210,910);
-         }else if(cant==2 && resultado>=0){
-         lab.setLocation(1080,910);
-         }else if(cant==3 && resultado>=0 ){
-         lab.setLocation(960,910); 
-         }else if(cant==4 && resultado>=0){
-         lab.setLocation(840,910);
-         }else if(cant==5 && resultado>=0){
-         lab.setLocation(710,910);
-         }else if(cant==6 && resultado>=0){
-         lab.setLocation (590,910);
-         }else if(cant==7 && resultado>=0){
-         lab.setLocation(460,910);
-         }else if(cant==8 && resultado>=0){
-         lab.setLocation(340,910); 
-         }else if(cant==9 && resultado>=0){
-         lab.setLocation(210,910);
-         }else if(cant==10 && resultado>=0){
-         lab.setLocation(40,890);
-         } else if(cant==11 && resultado>=0){
-         lab.setLocation(30,786); 
-         }else if(cant==12 && resultado>=0){
-         lab.setLocation(30, 703);
-         }else if(cant==13 && resultado>=0){
-         lab.setLocation(30,621);
-         } 
-      }     
-     };
-     time.scheduleAtFixedRate(task, 1000, 700); 
-    }*/
-    ///////////
-    //funciones de cada casilla
+ 
  ///////////////////////////////////////////////////////////////////   
 //evento click label de gif dados
     private void labDadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labDadoMouseClicked
@@ -574,31 +518,21 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
         this.labD1.setVisible(true);
          this.labD2.setVisible(true);
         dados(); carasDados();
-       this.labDado.setVisible(false);
-       
-        
-           
-               
-             
-            
-       
+       this.labDado.setVisible(false); //oculta el gif 
+       botonturno.setEnabled(false);
+       jButton1.setEnabled(true);
     }//GEN-LAST:event_labDadoMouseClicked
 /////////////////
     //termina el turno del jugador e inicia el siguiente
   
   
     private void botonturnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonturnoActionPerformed
-      //  int resp1 = Integer.parseInt(cantidados.getText());
-      
+   
         this.labDado.setVisible(true);
         this.labD1.setVisible(false);
-         this.labD2.setVisible(false);
-         this.cantidados.setText("");       
-        
-         turnos();
-          
-    
-    
+        this.labD2.setVisible(false);
+        this.cantidados.setText("");       
+        turnos(); 
     
     }//GEN-LAST:event_botonturnoActionPerformed
 ////////////  
@@ -623,11 +557,18 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
 /////////
     //boton para iniciar partida
     private void iniciarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarPartidaActionPerformed
-    this.botonturno.setEnabled(true);
-    this.labDado.setVisible(true);
+    
+    
+    
+   if(HB1.isSelected() && HB2.isSelected()){
+   JOptionPane.showMessageDialog(this, "Que inicie la Partida");
+   this.labDado.setVisible(true);
     this.iniciarPartida.setVisible(false);
     this.jugadorTlb.setText("j1");
-    //HB1.setVisible(false);HB2.setVisible(false);HB3.setVisible(false);HB4.setVisible(false);
+    HB1.setVisible(false);HB2.setVisible(false);HB3.setVisible(false);HB4.setVisible(false);
+   }else if(HB1.isSelected()==false || HB1.isSelected()&&HB2.isSelected()==false){
+   JOptionPane.showMessageDialog(this, "Debe seleccionar 2 jugador como mínimo");
+   }
     /*float cont=15;
     jugador1.setSaldo(cont);
     System.out.println(jugador1.getSaldo());*/
@@ -650,27 +591,25 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
         habilitarJugador();
     }//GEN-LAST:event_HB4StateChanged
 ////
-    int x; int y;  int cant; 
+    ///////boton mover
+ 
+ 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     
     
-  
-     
         try{
             cant=Integer.parseInt(cantidados.getText()); 
             System.out.println(cont1);
          switch(jugadorTlb.getText()){
-             case "j1": cont1=cont1+cant;moverPieza1(lab1,cont1);break;
-             case "j2":  cont2=cont2+cant;moverPieza1(lab2,cont2);break;
-         
+             case "j1": cont1+=cant;moverPieza1(cont1); moverPieza2(cont2);break;
+             case "j2":  cont2+=cant;moverPieza2(cont2);moverPieza1(cont1);break;
          }
-         
-      x=lab1.getX();
-      y=lab1.getY();
+     
       tarjetasCasilla();
      }catch(Exception e){
      JOptionPane.showMessageDialog(null, "debe tirar dados");
      }
+          botonturno.setEnabled(true);
+          this.jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 ///////////////////////////////
     
@@ -746,4 +685,5 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     private javax.swing.JComboBox<String> selecJ4;
     private javax.swing.JLabel tarjetasLab;
     // End of variables declaration//GEN-END:variables
+
 }
