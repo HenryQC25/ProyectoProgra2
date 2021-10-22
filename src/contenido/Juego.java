@@ -68,8 +68,6 @@ public class Juego extends javax.swing.JFrame {
         labD2 = new javax.swing.JLabel();
         labD1 = new javax.swing.JLabel();
         cantidados = new javax.swing.JLabel();
-        casillaCarcel1 = new javax.swing.JLabel();
-        tarjetasLab = new javax.swing.JLabel();
         botonturno = new javax.swing.JButton();
         HB4 = new javax.swing.JCheckBox();
         HB1 = new javax.swing.JCheckBox();
@@ -163,19 +161,6 @@ public class Juego extends javax.swing.JFrame {
         cantidados.setForeground(new java.awt.Color(255, 0, 51));
         panelFondo.add(cantidados, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, 30, 20));
 
-        casillaCarcel1.setBackground(new java.awt.Color(240, 22, 6));
-        casillaCarcel1.setText("carcel");
-        casillaCarcel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        casillaCarcel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        casillaCarcel1.setOpaque(true);
-        casillaCarcel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        panelFondo.add(casillaCarcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 50, 40));
-
-        tarjetasLab.setBackground(new java.awt.Color(255, 204, 51));
-        tarjetasLab.setText("tarjetas y funciones");
-        tarjetasLab.setOpaque(true);
-        panelFondo.add(tarjetasLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 580, 170, 220));
-
         jPanel1.add(panelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1530, 1000));
 
         botonturno.setBackground(new java.awt.Color(255, 255, 51));
@@ -254,13 +239,13 @@ public class Juego extends javax.swing.JFrame {
         saldo1.setText("Q.1500");
         jPanel1.add(saldo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 100, 100, 30));
 
-        saldo2.setText("Q.");
+        saldo2.setText("Q.1500");
         jPanel1.add(saldo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 290, 100, 30));
 
-        saldo3.setText("Q.");
+        saldo3.setText("Q1500.");
         jPanel1.add(saldo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 510, 100, 30));
 
-        saldo4.setText("Q.");
+        saldo4.setText("Q.1500");
         jPanel1.add(saldo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 690, 100, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 1890, 1000));
@@ -405,7 +390,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     lbl.setIcon(this.icono);
     this.repaint();
     }
-/////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
     //genera turnos y de guia muestra en un label el turno de cada jugador
     public void turnos(){
     if(HB4.isSelected()&& HB1.isSelected()&& HB2.isSelected()&& HB3.isSelected()){    
@@ -422,11 +407,9 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             case "j4":
                 jugadorTlb.setText("j1");    
                 break;
-            default:
-                break;
         }
       }else
-     if(HB1.isSelected()&&HB2.isSelected()&&HB3.isSelected()){    
+      if(HB1.isSelected()&&HB2.isSelected()&&HB3.isSelected()){    
         switch (jugadorTlb.getText()) {
             case "j1":
                 jugadorTlb.setText("j2");
@@ -440,14 +423,12 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             
         }
       }else
-     if(HB1.isSelected()&&HB2.isSelected()){    
-         
-   switch (jugadorTlb.getText()) {
+      if(HB1.isSelected()&&HB2.isSelected()){          
+      switch (jugadorTlb.getText()) {
             case "j1":                
                 jugadorTlb.setText("j2");               
                   break;
-            case "j2":               
-                 
+            case "j2":                           
                 jugadorTlb.setText("j1");             
                  break;
       }
@@ -456,38 +437,37 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     
     //////////////////////////////////
     public void moverPieza4(){
-       if(cont4>40){
- 
+          if(cont4>40){         
+ int res4=cont4-40;
+ cont4=res4; 
  } 
-       
    switch (cont4) {
-            case 1:lab2.setLocation(1270,910);break;case 2:lab2.setLocation(1140,910);break;
-            case 3:lab2.setLocation(1020,910);break;case 4:lab2.setLocation(900,910);break;
-            case 5:lab2.setLocation(770,910);break;case 6:lab2.setLocation(650,910);break;
-            case 7:lab2.setLocation(520,910);break;case 8:lab2.setLocation(400,910);break;
-            case 9:lab2.setLocation(270,910);break;case 10:lab2.setLocation(100,890);break;
-            case 11:lab2.setLocation(90,786);break;case 12:lab2.setLocation(90,703);break;
-            case 13:lab2.setLocation(90,621);break;case 14:lab2.setLocation(90,541);break;
-            case 15:lab2.setLocation(90,460);break;case 16:lab2.setLocation(90,380);break;
-            case 17:lab2.setLocation(90,299);break;case 18:lab2.setLocation(90,217);break;
-            case 19:lab2.setLocation(90,136);break;case 20:lab2.setLocation(90,10);break;
-            case 21:lab2.setLocation(270,10);break;case 22:lab2.setLocation(400,10);break;
-            case 23:lab2.setLocation(520,10);break;case 24:lab2.setLocation(650,10);break;
-            case 25:lab2.setLocation(770,10);break;case 26:lab2.setLocation(900,10);break;
-            case 27:lab2.setLocation(1020,10);break;case 28:lab2.setLocation(1140,10);break;
-            case 29:lab2.setLocation(1270,10);break;case 30:lab2.setLocation(1440,20);break;
-            case 31:lab2.setLocation(1460,136);break;case 32:lab2.setLocation(1460,217);break;
-            case 33:lab2.setLocation(1460,299);break;case 34:lab2.setLocation(1460,380);break;
-            case 35:lab2.setLocation(1460,460);break;case 36:lab2.setLocation(1460,541);break;
-            case 37:lab2.setLocation(1460,621);break;case 38:lab2.setLocation(1460,703);break;
-            case 39:lab2.setLocation(1460,786);break;case 40:lab2.setLocation(1440,890);break; 
+            case 1:lab4.setLocation(1270,950);break;case 2:lab4.setLocation(1140,950);break;
+            case 3:lab4.setLocation(1020,950);break;case 4:lab4.setLocation(900,950);break;
+            case 5:lab4.setLocation(770,950);break;case 6:lab4.setLocation(650,950);break;
+            case 7:lab4.setLocation(520,950);break;case 8:lab4.setLocation(400,950);break;
+            case 9:lab4.setLocation(270,950);break;case 10:lab4.setLocation(100,930);break;
+            case 11:lab4.setLocation(90,827);break;case 12:lab4.setLocation(90,744);break;
+            case 13:lab4.setLocation(90,661);break;case 14:lab4.setLocation(90,581);break;
+            case 15:lab4.setLocation(90,500);break;case 16:lab4.setLocation(90,420);break;
+            case 17:lab4.setLocation(90,337);break;case 18:lab4.setLocation(90,257);break;
+            case 19:lab4.setLocation(90,176);break;case 20:lab4.setLocation(90,50);break;
+            case 21:lab4.setLocation(270,50);break;case 22:lab4.setLocation(400,50);break;
+            case 23:lab4.setLocation(520,50);break;case 24:lab4.setLocation(650,50);break;
+            case 25:lab4.setLocation(770,50);break;case 26:lab4.setLocation(900,50);break;
+            case 27:lab4.setLocation(1020,50);break;case 28:lab4.setLocation(1140,50);break;
+            case 29:lab4.setLocation(1270,50);break;case 30:lab4.setLocation(1440,60);break;
+            case 31:lab4.setLocation(1460,176);break;case 32:lab4.setLocation(1460,257);break;
+            case 33:lab4.setLocation(1460,337);break;case 34:lab4.setLocation(1460,420);break;
+            case 35:lab4.setLocation(1460,500);break;case 36:lab4.setLocation(1460,581);break;
+            case 37:lab4.setLocation(1460,661);break;case 38:lab4.setLocation(1460,744);break;
+            case 39:lab4.setLocation(1460,827);break;case 40:lab4.setLocation(1440,930);break; 
    }
    }
     /////////////////////////////////
     public void moverPieza3(){
-       if(cont3>40){
-          
-           int res3=cont3-40;
+       if(cont3>40){         
+ int res3=cont3-40;
  cont3=res3; 
  } 
        System.out.println(cont3);
@@ -691,10 +671,10 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             cant=Integer.parseInt(cantidados.getText()); 
             
             switch(jugadorTlb.getText()){
-             case "j1":  cont1+=cant;moverPieza1(); moverPieza2();moverPieza3(); tarjetasCasilla(cont1);break;
-             case "j2":  cont2+=cant;moverPieza2();moverPieza1();moverPieza3(); tarjetasCasilla(cont2);break;
-             case "j3": cont3+=cant;moverPieza3(); moverPieza2();moverPieza1(); tarjetasCasilla(cont3);break;
-             case "j4":  cont4+=cant;moverPieza4();moverPieza1();tarjetasCasilla(cont4);break;
+             case "j1":  cont1+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4(); tarjetasCasilla(cont1);break;
+             case "j2":  cont2+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4(); tarjetasCasilla(cont2);break;
+             case "j3": cont3+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4(); tarjetasCasilla(cont3);break;
+             case "j4":  cont4+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();tarjetasCasilla(cont4);break;
          }
      }catch(Exception e){
      JOptionPane.showMessageDialog(null, "debe tirar dados");
@@ -746,7 +726,6 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     private javax.swing.JCheckBox HB4;
     private javax.swing.JButton botonturno;
     private javax.swing.JLabel cantidados;
-    private javax.swing.JLabel casillaCarcel1;
     private javax.swing.JButton iniciarPartida;
     private javax.swing.JLabel j1;
     private javax.swing.JLabel j2;
@@ -775,7 +754,6 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     private javax.swing.JComboBox<String> selecJ2;
     private javax.swing.JComboBox<String> selecJ3;
     private javax.swing.JComboBox<String> selecJ4;
-    private javax.swing.JLabel tarjetasLab;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -272,37 +272,6 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="casillaCarcel1">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="6" green="16" red="f0" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="carcel"/>
-                <Property name="verticalAlignment" type="int" value="1"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-                <Property name="opaque" type="boolean" value="true"/>
-                <Property name="verticalTextPosition" type="int" value="1"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="210" y="10" width="50" height="40"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="tarjetasLab">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="tarjetas y funciones"/>
-                <Property name="opaque" type="boolean" value="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="660" y="580" width="170" height="220"/>
-                </Constraint>
-              </Constraints>
-            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JButton" name="botonturno">
@@ -464,7 +433,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="saldo2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Q."/>
+            <Property name="text" type="java.lang.String" value="Q.1500"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -474,7 +443,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="saldo3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Q."/>
+            <Property name="text" type="java.lang.String" value="Q1500."/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -484,7 +453,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="saldo4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Q."/>
+            <Property name="text" type="java.lang.String" value="Q.1500"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
