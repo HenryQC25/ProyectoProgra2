@@ -14,12 +14,11 @@ import javax.swing.JPanel;
 
 
 public class Juego extends javax.swing.JFrame {
-   ////////////////Para el movimiento
-    Timer time = new Timer();
+  
    ////////////////////////////
     //variables temporales para llevar a clases jugadores
    
-    int cont1=0;int cont2=0; int saldo=1500;int cant; 
+    int cont1=0;int cont2=0;int cont3=0;int cont4=0; int saldo=1500;int cant; 
     /////////////
 //constructor class jugador
    jugador jugador1 = new jugador();
@@ -170,7 +169,7 @@ public class Juego extends javax.swing.JFrame {
         casillaCarcel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         casillaCarcel1.setOpaque(true);
         casillaCarcel1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        panelFondo.add(casillaCarcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 910, 50, 40));
+        panelFondo.add(casillaCarcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 50, 40));
 
         tarjetasLab.setBackground(new java.awt.Color(255, 204, 51));
         tarjetasLab.setText("tarjetas y funciones");
@@ -445,53 +444,143 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
          
    switch (jugadorTlb.getText()) {
             case "j1":                
-            
-                jugadorTlb.setText("j2");                 
+                jugadorTlb.setText("j2");               
                   break;
             case "j2":               
                  
-                jugadorTlb.setText("j1");               
+                jugadorTlb.setText("j1");             
                  break;
       }
      }
     }
-    /////////////////////////////////
-   public void moverPieza2(int cont){
-   switch (cont) {
-            case 1:lab2.setLocation(1270,910);break;
-            case 2:lab2.setLocation(1140,910);break;
-            case 3:lab2.setLocation(1020,910);break;
-            case 4:lab2.setLocation(900,910);break;
-            case 5:lab2.setLocation(770,910);break;
-            case 6:lab2.setLocation(650,910);break;
-            case 7:lab2.setLocation(520,910);break;
-            case 8:lab2.setLocation(400,910);break;
-            case 9:lab2.setLocation(270,910);break;
-            case 10:lab2.setLocation(100,890);break;
-            case 11:lab2.setLocation(90,786);break;
-            case 12:lab2.setLocation(90,703);break;
-            case 13:lab2.setLocation(90,621);break; 
-   }
-   }
-    public void moverPieza1( int cont){  
-        System.out.println(cont);
+    
+    //////////////////////////////////
+    public void moverPieza4(){
+       if(cont4>40){
+ 
+ } 
        
-       switch (cont) {
-            case 1:lab1.setLocation(1210,910);break;
-            case 2:lab1.setLocation(1080,910);break;
-            case 3:lab1.setLocation(960,910);break;
-            case 4:lab1.setLocation(840,910);break;
-            case 5:lab1.setLocation(710,910);break;
-            case 6:lab1.setLocation (590,910);break;
-            case 7:lab1.setLocation(460,910);break;
-            case 8:lab1.setLocation(340,910);break;
-            case 9:lab1.setLocation(210,910);break;
-            case 10:lab1.setLocation(40,890);break;
-            case 11:lab1.setLocation(30,786);break;
-            case 12:lab1.setLocation(30, 703);break;
-            case 13:lab1.setLocation(30,621);break; 
+   switch (cont4) {
+            case 1:lab2.setLocation(1270,910);break;case 2:lab2.setLocation(1140,910);break;
+            case 3:lab2.setLocation(1020,910);break;case 4:lab2.setLocation(900,910);break;
+            case 5:lab2.setLocation(770,910);break;case 6:lab2.setLocation(650,910);break;
+            case 7:lab2.setLocation(520,910);break;case 8:lab2.setLocation(400,910);break;
+            case 9:lab2.setLocation(270,910);break;case 10:lab2.setLocation(100,890);break;
+            case 11:lab2.setLocation(90,786);break;case 12:lab2.setLocation(90,703);break;
+            case 13:lab2.setLocation(90,621);break;case 14:lab2.setLocation(90,541);break;
+            case 15:lab2.setLocation(90,460);break;case 16:lab2.setLocation(90,380);break;
+            case 17:lab2.setLocation(90,299);break;case 18:lab2.setLocation(90,217);break;
+            case 19:lab2.setLocation(90,136);break;case 20:lab2.setLocation(90,10);break;
+            case 21:lab2.setLocation(270,10);break;case 22:lab2.setLocation(400,10);break;
+            case 23:lab2.setLocation(520,10);break;case 24:lab2.setLocation(650,10);break;
+            case 25:lab2.setLocation(770,10);break;case 26:lab2.setLocation(900,10);break;
+            case 27:lab2.setLocation(1020,10);break;case 28:lab2.setLocation(1140,10);break;
+            case 29:lab2.setLocation(1270,10);break;case 30:lab2.setLocation(1440,20);break;
+            case 31:lab2.setLocation(1460,136);break;case 32:lab2.setLocation(1460,217);break;
+            case 33:lab2.setLocation(1460,299);break;case 34:lab2.setLocation(1460,380);break;
+            case 35:lab2.setLocation(1460,460);break;case 36:lab2.setLocation(1460,541);break;
+            case 37:lab2.setLocation(1460,621);break;case 38:lab2.setLocation(1460,703);break;
+            case 39:lab2.setLocation(1460,786);break;case 40:lab2.setLocation(1440,890);break; 
+   }
+   }
+    /////////////////////////////////
+    public void moverPieza3(){
+       if(cont3>40){
+          
+           int res3=cont3-40;
+ cont3=res3; 
+ } 
+       System.out.println(cont3);
+   switch (cont3) {
+             case 1:lab3.setLocation(1210,950);break;case 2:lab3.setLocation(1080,950);break;
+            case 3:lab3.setLocation(960,950);break;case 4:lab3.setLocation(840,950);break;
+            case 5:lab3.setLocation(710,950);break;case 6:lab3.setLocation (590,950);break;
+            case 7:lab3.setLocation(460,950);break;case 8:lab3.setLocation(340,950);break;
+            case 9:lab3.setLocation(210,950);break;case 10:lab3.setLocation(40,930);break;
+            case 11:lab3.setLocation(30,827);break;case 12:lab3.setLocation(30, 744);break;
+            case 13:lab3.setLocation(30,661);break;case 14:lab3.setLocation(30,581);break;
+            case 15:lab3.setLocation(30,500);break;case 16:lab3.setLocation(30,420);break;
+            case 17:lab3.setLocation(30,337);break;case 18:lab3.setLocation(30,257);break;
+            case 19:lab3.setLocation(30,176);break;case 20:lab3.setLocation(30,50);break;
+            case 21:lab3.setLocation(210,50);break;case 22:lab3.setLocation(340,50);break;
+            case 23:lab3.setLocation(460,50);break;case 24:lab3.setLocation(590,50);break;
+            case 25:lab3.setLocation(710,50);break;case 26:lab3.setLocation(840,50);break;
+            case 27:lab3.setLocation(960,50);break;case 28:lab3.setLocation(1080,50);break;
+            case 29:lab3.setLocation(1210,50);break;case 30:lab3.setLocation(1380,60);break;
+            case 31:lab3.setLocation(1400,176);break;case 32:lab3.setLocation(1400,257);break;
+            case 33:lab3.setLocation(1400,337);break;case 34:lab3.setLocation(1400,420);break;
+            case 35:lab3.setLocation(1400,500);break;case 36:lab3.setLocation(1400,581);break;
+            case 37:lab3.setLocation(1400,661);break;case 38:lab3.setLocation(1400,744);break;
+            case 39:lab3.setLocation(1400,827);break;case 40:lab3.setLocation(1380,930);break;
+   }
+  
+   }
+    /////////////////////////////////
+   public void moverPieza2(){
+     if(cont2>40){
            
+           int res2=cont2-40;
+ cont2=res2; 
+ } 
+       System.out.println(cont2);
+     
+   switch (cont2) {
+            case 1:lab2.setLocation(1270,910);break;case 2:lab2.setLocation(1140,910);break;
+            case 3:lab2.setLocation(1020,910);break;case 4:lab2.setLocation(900,910);break;
+            case 5:lab2.setLocation(770,910);break;case 6:lab2.setLocation(650,910);break;
+            case 7:lab2.setLocation(520,910);break;case 8:lab2.setLocation(400,910);break;
+            case 9:lab2.setLocation(270,910);break;case 10:lab2.setLocation(100,890);break;
+            case 11:lab2.setLocation(90,786);break;case 12:lab2.setLocation(90,703);break;
+            case 13:lab2.setLocation(90,621);break;case 14:lab2.setLocation(90,541);break;
+            case 15:lab2.setLocation(90,460);break;case 16:lab2.setLocation(90,380);break;
+            case 17:lab2.setLocation(90,299);break;case 18:lab2.setLocation(90,217);break;
+            case 19:lab2.setLocation(90,136);break;case 20:lab2.setLocation(90,10);break;
+            case 21:lab2.setLocation(270,10);break;case 22:lab2.setLocation(400,10);break;
+            case 23:lab2.setLocation(520,10);break;case 24:lab2.setLocation(650,10);break;
+            case 25:lab2.setLocation(770,10);break;case 26:lab2.setLocation(900,10);break;
+            case 27:lab2.setLocation(1020,10);break;case 28:lab2.setLocation(1140,10);break;
+            case 29:lab2.setLocation(1270,10);break;case 30:lab2.setLocation(1440,20);break;
+            case 31:lab2.setLocation(1460,136);break;case 32:lab2.setLocation(1460,217);break;
+            case 33:lab2.setLocation(1460,299);break;case 34:lab2.setLocation(1460,380);break;
+            case 35:lab2.setLocation(1460,460);break;case 36:lab2.setLocation(1460,541);break;
+            case 37:lab2.setLocation(1460,621);break;case 38:lab2.setLocation(1460,703);break;
+            case 39:lab2.setLocation(1460,786);break;case 40:lab2.setLocation(1440,890);break; 
+   }
+     
+   }
+   /////////////////////////////////
+ 
+    public void moverPieza1(){  
+       if(cont1>40){
+           
+           int res1=cont1-40;
+ cont1=res1; 
+ } 
+       System.out.println(cont1);
+        
+       switch (cont1) {
+            case 1:lab1.setLocation(1210,910);break;case 2:lab1.setLocation(1080,910);break;
+            case 3:lab1.setLocation(960,910);break;case 4:lab1.setLocation(840,910);break;
+            case 5:lab1.setLocation(710,910);break;case 6:lab1.setLocation (590,910);break;
+            case 7:lab1.setLocation(460,910);break;case 8:lab1.setLocation(340,910);break;
+            case 9:lab1.setLocation(210,910);break;case 10:lab1.setLocation(40,890);break;
+            case 11:lab1.setLocation(30,786);break;case 12:lab1.setLocation(30, 703);break;
+            case 13:lab1.setLocation(30,621);break;case 14:lab1.setLocation(30,541);break;
+            case 15:lab1.setLocation(30,460);break;case 16:lab1.setLocation(30,380);break;
+            case 17:lab1.setLocation(30,299);break;case 18:lab1.setLocation(30,217);break;
+            case 19:lab1.setLocation(30,136);break;case 20:lab1.setLocation(30,10);break;
+            case 21:lab1.setLocation(210,10);break;case 22:lab1.setLocation(340,10);break;
+            case 23:lab1.setLocation(460,10);break;case 24:lab1.setLocation(590,10);break;
+            case 25:lab1.setLocation(710,10);break;case 26:lab1.setLocation(840,10);break;
+            case 27:lab1.setLocation(960,10);break;case 28:lab1.setLocation(1080,10);break;
+            case 29:lab1.setLocation(1210,10);break;case 30:lab1.setLocation(1380,20);break;
+            case 31:lab1.setLocation(1400,136);break;case 32:lab1.setLocation(1400,217);break;
+            case 33:lab1.setLocation(1400,299);break;case 34:lab1.setLocation(1400,380);break;
+            case 35:lab1.setLocation(1400,460);break;case 36:lab1.setLocation(1400,541);break;
+            case 37:lab1.setLocation(1400,621);break;case 38:lab1.setLocation(1400,703);break;
+            case 39:lab1.setLocation(1400,786);break;case 40:lab1.setLocation(1380,890);break;
         }
+     
     }
     //////////////
     void verificar(){
@@ -502,8 +591,8 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     }
     }
     //////
-    public void tarjetasCasilla(){
-    switch(cont1){
+    public void tarjetasCasilla(int cont){
+    switch(cont){
         case 1: JOptionPane.showConfirmDialog(null, "desea comprar el safari chapin");break;
          case 2: JOptionPane.showMessageDialog(null, "le toca vanzar");  ;break;
         case 3: verificar();break;
@@ -521,6 +610,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
        this.labDado.setVisible(false); //oculta el gif 
        botonturno.setEnabled(false);
        jButton1.setEnabled(true);
+   
     }//GEN-LAST:event_labDadoMouseClicked
 /////////////////
     //termina el turno del jugador e inicia el siguiente
@@ -533,7 +623,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
         this.labD2.setVisible(false);
         this.cantidados.setText("");       
         turnos(); 
-    
+   
     }//GEN-LAST:event_botonturnoActionPerformed
 ////////////  
     
@@ -595,19 +685,21 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
  
  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    
+  
         try{
+            
             cant=Integer.parseInt(cantidados.getText()); 
-            System.out.println(cont1);
-         switch(jugadorTlb.getText()){
-             case "j1": cont1+=cant;moverPieza1(cont1); moverPieza2(cont2);break;
-             case "j2":  cont2+=cant;moverPieza2(cont2);moverPieza1(cont1);break;
+            
+            switch(jugadorTlb.getText()){
+             case "j1":  cont1+=cant;moverPieza1(); moverPieza2();moverPieza3(); tarjetasCasilla(cont1);break;
+             case "j2":  cont2+=cant;moverPieza2();moverPieza1();moverPieza3(); tarjetasCasilla(cont2);break;
+             case "j3": cont3+=cant;moverPieza3(); moverPieza2();moverPieza1(); tarjetasCasilla(cont3);break;
+             case "j4":  cont4+=cant;moverPieza4();moverPieza1();tarjetasCasilla(cont4);break;
          }
-     
-      tarjetasCasilla();
      }catch(Exception e){
      JOptionPane.showMessageDialog(null, "debe tirar dados");
      }
+        
           botonturno.setEnabled(true);
           this.jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
