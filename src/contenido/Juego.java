@@ -3,8 +3,6 @@ package contenido;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.util.Timer;
-import java.util.TimerTask;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -17,11 +15,11 @@ public class Juego extends javax.swing.JFrame {
   
    ////////////////////////////
     //variables temporales para llevar a clases jugadores
+   jugador ju1 = new jugador();jugador ju2 = new jugador();
+   jugador ju3 = new jugador();jugador ju4 = new jugador();
+    //int cont1=0;int cont2=0;int cont3=0;int cont4=0; int saldoj1=1500;int saldoj2=1500;
+   int cant; 
    
-    int cont1=0;int cont2=0;int cont3=0;int cont4=0; int saldo=1500;int cant; 
-    /////////////
-//constructor class jugador
-   jugador jugador1 = new jugador();
    ///////////////////////////
     /////////variable de imagen para ajustar y colocar en label 
     private ImageIcon imagen;
@@ -437,11 +435,11 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     
     //////////////////////////////////
     public void moverPieza4(){
-          if(cont4>40){         
- int res4=cont4-40;
- cont4=res4; 
+          if(ju4.contadorJ>40){         
+ int res4=ju4.contadorJ-40;
+ ju4.contadorJ=res4; 
  } 
-   switch (cont4) {
+   switch (ju4.contadorJ) {
             case 1:lab4.setLocation(1270,950);break;case 2:lab4.setLocation(1140,950);break;
             case 3:lab4.setLocation(1020,950);break;case 4:lab4.setLocation(900,950);break;
             case 5:lab4.setLocation(770,950);break;case 6:lab4.setLocation(650,950);break;
@@ -466,12 +464,12 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
    }
     /////////////////////////////////
     public void moverPieza3(){
-       if(cont3>40){         
- int res3=cont3-40;
- cont3=res3; 
+       if(ju3.contadorJ>40){         
+ int res3=ju3.contadorJ-40;
+ ju3.contadorJ=res3; 
  } 
-       System.out.println(cont3);
-   switch (cont3) {
+       System.out.println(ju3.contadorJ);
+   switch (ju3.contadorJ) {
              case 1:lab3.setLocation(1210,950);break;case 2:lab3.setLocation(1080,950);break;
             case 3:lab3.setLocation(960,950);break;case 4:lab3.setLocation(840,950);break;
             case 5:lab3.setLocation(710,950);break;case 6:lab3.setLocation (590,950);break;
@@ -497,14 +495,14 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
    }
     /////////////////////////////////
    public void moverPieza2(){
-     if(cont2>40){
+     if(ju2.contadorJ>40){
            
-           int res2=cont2-40;
- cont2=res2; 
+           int res2=ju2.contadorJ-40;
+ ju2.contadorJ=res2; 
  } 
-       System.out.println(cont2);
+     //  System.out.println(ju2.contadorJ);
      
-   switch (cont2) {
+   switch (ju2.contadorJ) {
             case 1:lab2.setLocation(1270,910);break;case 2:lab2.setLocation(1140,910);break;
             case 3:lab2.setLocation(1020,910);break;case 4:lab2.setLocation(900,910);break;
             case 5:lab2.setLocation(770,910);break;case 6:lab2.setLocation(650,910);break;
@@ -531,14 +529,15 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
    /////////////////////////////////
  
     public void moverPieza1(){  
-       if(cont1>40){
+       if(ju1.contadorJ>40){
            
-           int res1=cont1-40;
- cont1=res1; 
+           int res1=ju1.contadorJ-40;
+ ju1.contadorJ=res1;
+ int sumaSaldo=ju1.saldo+200; saldo1.setText("Q"+sumaSaldo);ju1.saldo=sumaSaldo;
  } 
-       System.out.println(cont1);
+    //   System.out.println(ju1.contadorJ);
         
-       switch (cont1) {
+       switch (ju1.contadorJ) {
             case 1:lab1.setLocation(1210,910);break;case 2:lab1.setLocation(1080,910);break;
             case 3:lab1.setLocation(960,910);break;case 4:lab1.setLocation(840,910);break;
             case 5:lab1.setLocation(710,910);break;case 6:lab1.setLocation (590,910);break;
@@ -566,8 +565,8 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     void verificar(){
     int i=JOptionPane.showConfirmDialog(null, "desea comprar zoo aurora");
     if(i==0){
-    saldo=saldo-60;
-    saldo1.setText("Q"+saldo);
+    ju1.saldo=ju1.saldo-60;
+    saldo1.setText("Q"+ju1.saldo);
     }
     }
     //////
@@ -627,9 +626,6 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
 /////////
     //boton para iniciar partida
     private void iniciarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarPartidaActionPerformed
-    
-    
-    
    if(HB1.isSelected() && HB2.isSelected()){
    JOptionPane.showMessageDialog(this, "Que inicie la Partida");
    this.labDado.setVisible(true);
@@ -639,9 +635,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
    }else if(HB1.isSelected()==false || HB1.isSelected()&&HB2.isSelected()==false){
    JOptionPane.showMessageDialog(this, "Debe seleccionar 2 jugador como mínimo");
    }
-    /*float cont=15;
-    jugador1.setSaldo(cont);
-    System.out.println(jugador1.getSaldo());*/
+    
     }//GEN-LAST:event_iniciarPartidaActionPerformed
 ////////////
     //estos eventos permiten habilitar a los jugadores 
@@ -662,7 +656,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     }//GEN-LAST:event_HB4StateChanged
 ////
     ///////boton mover
- 
+ Casilla c1=new Casilla();
  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
   
@@ -671,15 +665,16 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             cant=Integer.parseInt(cantidados.getText()); 
             
             switch(jugadorTlb.getText()){
-             case "j1":  cont1+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4(); tarjetasCasilla(cont1);break;
-             case "j2":  cont2+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4(); tarjetasCasilla(cont2);break;
-             case "j3": cont3+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4(); tarjetasCasilla(cont3);break;
-             case "j4":  cont4+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();tarjetasCasilla(cont4);break;
+             case "j1":  ju1.contadorJ+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4();c1.casillaOP(ju1.contadorJ);/*tarjetasCasilla(ju1.contadorJ)*/;break;
+             case "j2":  ju2.contadorJ+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4(); /*tarjetasCasilla(ju2.contadorJ);*/;break;
+             case "j3":  ju3.contadorJ+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4(); /*tarjetasCasilla(ju3.contadorJ)*/;break;
+             case "j4":  ju4.contadorJ+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();/*tarjetasCasilla(ju4.contadorJ);*/;break;
+             
          }
      }catch(Exception e){
      JOptionPane.showMessageDialog(null, "debe tirar dados");
      }
-        
+        botonturno.doClick();
           botonturno.setEnabled(true);
           this.jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed

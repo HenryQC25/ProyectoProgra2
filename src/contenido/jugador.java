@@ -4,28 +4,20 @@ package contenido;
 import javax.swing.JLabel;
 
 
- public class jugador extends movimiento {
+ public class jugador{
  //Atributos
      public JLabel label;
-     public Juego juego;
-     public String contadorJ;
-     public float saldo=1500;
-
-    public float getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
-    }
+     
+     public int contadorJ=0;
+     public int saldo=1500;
+     
+    /*public Casilla(){
+    super();
+    };*/
+     public jugador(){};
     
-    
-    public jugador(){};
-
-   
-
- 
- 
+    public void comprar(){};
+    public void pagar(){};
  }
 
  
