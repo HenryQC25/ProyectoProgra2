@@ -1,6 +1,6 @@
 
 package contenido;
-
+import java.awt.*;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.Icon;
@@ -14,10 +14,13 @@ import javax.swing.JPanel;
 public class Juego extends javax.swing.JFrame {
   
    ////////////////////////////
-    //variables temporales para llevar a clases jugadores
+    //objetos par usar las variables y poder reutilizar codigo 
    jugador ju1 = new jugador();jugador ju2 = new jugador();
    jugador ju3 = new jugador();jugador ju4 = new jugador();
+   Casilla c1=new Casilla();Casilla c2=new Casilla();
+   Casilla c3=new Casilla();Casilla c4=new Casilla();
     //int cont1=0;int cont2=0;int cont3=0;int cont4=0; int saldoj1=1500;int saldoj2=1500;
+   //cantidad que funcionará para almacenar el valor de los dados e incrementar el contador de los jugadores
    int cant; 
    
    ///////////////////////////
@@ -465,10 +468,10 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     /////////////////////////////////
     public void moverPieza3(){
        if(ju3.contadorJ>40){         
- int res3=ju3.contadorJ-40;
+       int res3=ju3.contadorJ-40;
  ju3.contadorJ=res3; 
  } 
-       System.out.println(ju3.contadorJ);
+      // System.out.println(ju3.contadorJ);
    switch (ju3.contadorJ) {
              case 1:lab3.setLocation(1210,950);break;case 2:lab3.setLocation(1080,950);break;
             case 3:lab3.setLocation(960,950);break;case 4:lab3.setLocation(840,950);break;
@@ -495,9 +498,8 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
    }
     /////////////////////////////////
    public void moverPieza2(){
-     if(ju2.contadorJ>40){
-           
-           int res2=ju2.contadorJ-40;
+     if(ju2.contadorJ>40){          
+     int res2=ju2.contadorJ-40;
  ju2.contadorJ=res2; 
  } 
      //  System.out.println(ju2.contadorJ);
@@ -600,6 +602,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
         this.labDado.setVisible(true);
         this.labD1.setVisible(false);
         this.labD2.setVisible(false);
+        
         this.cantidados.setText("");       
         turnos(); 
    
@@ -656,7 +659,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     }//GEN-LAST:event_HB4StateChanged
 ////
     ///////boton mover
- Casilla c1=new Casilla();
+ 
  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
   
@@ -665,10 +668,10 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             cant=Integer.parseInt(cantidados.getText()); 
             
             switch(jugadorTlb.getText()){
-             case "j1":  ju1.contadorJ+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4();c1.casillaOP(ju1.contadorJ);/*tarjetasCasilla(ju1.contadorJ)*/;break;
-             case "j2":  ju2.contadorJ+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4(); /*tarjetasCasilla(ju2.contadorJ);*/;break;
-             case "j3":  ju3.contadorJ+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4(); /*tarjetasCasilla(ju3.contadorJ)*/;break;
-             case "j4":  ju4.contadorJ+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();/*tarjetasCasilla(ju4.contadorJ);*/;break;
+             case "j1":  ju1.contadorJ+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4();c1.casillaOP(ju1.contadorJ,ju1.saldo,saldo1);/*tarjetasCasilla(ju1.contadorJ)*/;break;
+             case "j2":  ju2.contadorJ+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4();c2.casillaOP(ju2.contadorJ,ju2.saldo,saldo2); /*tarjetasCasilla(ju2.contadorJ);*/;break;
+             case "j3":  ju3.contadorJ+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4();c3.casillaOP(ju3.contadorJ,ju3.saldo,saldo3); /*tarjetasCasilla(ju3.contadorJ)*/;break;
+             case "j4":  ju4.contadorJ+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();c4.casillaOP(ju4.contadorJ,ju4.saldo,saldo4);/*tarjetasCasilla(ju4.contadorJ);*/;break;
              
          }
      }catch(Exception e){
