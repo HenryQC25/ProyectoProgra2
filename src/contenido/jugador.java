@@ -6,13 +6,12 @@ package contenido;
 
  public class jugador{
  //Atributos
-     public int contadorJ=0;
-     public int saldo=1500;
-
+      int contadorJ=0;
+      int saldo=1500;
+      String nombre = "";
      public jugador(){};
     
-    public void comprar(){};
-    public void pagar(){};
+   
  }
 
  

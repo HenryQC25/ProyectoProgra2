@@ -69,6 +69,12 @@ public class Juego extends javax.swing.JFrame {
         labD2 = new javax.swing.JLabel();
         labD1 = new javax.swing.JLabel();
         cantidados = new javax.swing.JLabel();
+        prt1 = new javax.swing.JLabel();
+        prt5 = new javax.swing.JLabel();
+        prt2 = new javax.swing.JLabel();
+        prt4 = new javax.swing.JLabel();
+        prt9 = new javax.swing.JLabel();
+        prt8 = new javax.swing.JLabel();
         botonturno = new javax.swing.JButton();
         HB4 = new javax.swing.JCheckBox();
         HB1 = new javax.swing.JCheckBox();
@@ -162,6 +168,36 @@ public class Juego extends javax.swing.JFrame {
         cantidados.setForeground(new java.awt.Color(255, 0, 51));
         panelFondo.add(cantidados, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, 30, 20));
 
+        prt1.setBackground(new java.awt.Color(255, 102, 102));
+        prt1.setText(".");
+        prt1.setOpaque(true);
+        panelFondo.add(prt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 910, 80, 50));
+
+        prt5.setBackground(new java.awt.Color(255, 255, 51));
+        prt5.setText(".");
+        prt5.setOpaque(true);
+        panelFondo.add(prt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 910, 80, 50));
+
+        prt2.setBackground(new java.awt.Color(255, 255, 51));
+        prt2.setText(".");
+        prt2.setOpaque(true);
+        panelFondo.add(prt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 910, 80, 50));
+
+        prt4.setBackground(new java.awt.Color(255, 102, 102));
+        prt4.setText(".");
+        prt4.setOpaque(true);
+        panelFondo.add(prt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 910, 80, 50));
+
+        prt9.setBackground(new java.awt.Color(255, 255, 51));
+        prt9.setText(".");
+        prt9.setOpaque(true);
+        panelFondo.add(prt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 910, 80, 50));
+
+        prt8.setBackground(new java.awt.Color(255, 102, 102));
+        prt8.setText(".");
+        prt8.setOpaque(true);
+        panelFondo.add(prt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 910, 80, 50));
+
         jPanel1.add(panelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1530, 1000));
 
         botonturno.setBackground(new java.awt.Color(255, 255, 51));
@@ -206,7 +242,7 @@ public class Juego extends javax.swing.JFrame {
         jPanel1.add(HB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 420, -1, -1));
 
         s1.setText("Personaje");
-        jPanel1.add(s1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1780, 10, 90, 90));
+        jPanel1.add(s1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 10, 90, 90));
 
         s2.setText("Personaje");
         jPanel1.add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 180, 90, 90));
@@ -320,31 +356,32 @@ String personaje1=selecJ1.getSelectedItem().toString();String personaje2=selecJ2
 String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4.getSelectedItem().toString();
  switch(personaje1){
      case "Seleccionar": this.scImagen(this.lab1, "");this.scImagen(this.s1, "");break;
-     case "Botella": this.scImagen(this.lab1, "src/ImagenesP/botella2.png");this.scImagen(this.s1, "src/ImagenesP/botella2.png");break;
-     case "Tecun": this.scImagen(this.lab1, "src/ImagenesP/tecun.png");this.scImagen(this.s1, "src/ImagenesP/tecun.png");break;
-     case "among": this.scImagen(this.lab1, "src/ImagenesP/among.png");this.scImagen(this.s1, "src/ImagenesP/among.png");break;
-     case "chucho": this.scImagen(this.lab1, "src/ImagenesP/chucho.png"); this.scImagen(this.s1, "src/ImagenesP/chucho.png");break;
+     case "Botella": this.scImagen(this.lab1, "src/ImagenesP/botella2.png");this.scImagen(this.s1, "src/ImagenesP/botella2.png");ju1.nombre="jugador1";break;
+     case "Tecun": this.scImagen(this.lab1, "src/ImagenesP/tecun.png");this.scImagen(this.s1, "src/ImagenesP/tecun.png");ju1.nombre="jugador1";break;
+     case "among": this.scImagen(this.lab1, "src/ImagenesP/among.png");this.scImagen(this.s1, "src/ImagenesP/among.png");ju1.nombre="jugador1";break;
+     case "chucho": this.scImagen(this.lab1, "src/ImagenesP/chucho.png"); this.scImagen(this.s1, "src/ImagenesP/chucho.png");ju1.nombre="jugador1";break;
+ 
  }
  switch(personaje2){
      case "Seleccionar": this.scImagen(this.lab2, "");this.scImagen(this.s2, "");break;
-     case "Botella": this.scImagen(this.lab2, "src/ImagenesP/botella2.png");this.scImagen(this.s2, "src/ImagenesP/botella2.png");break;
-     case "Tecun": this.scImagen(this.lab2, "src/ImagenesP/tecun.png");this.scImagen(this.s2, "src/ImagenesP/tecun.png");break;
-     case "among": this.scImagen(this.lab2, "src/ImagenesP/among.png");this.scImagen(this.s2, "src/ImagenesP/among.png");break;
-     case "chucho": this.scImagen(this.lab2, "src/ImagenesP/chucho.png"); this.scImagen(this.s2, "src/ImagenesP/chucho.png");break;
+     case "Botella": this.scImagen(this.lab2, "src/ImagenesP/botella2.png");this.scImagen(this.s2, "src/ImagenesP/botella2.png");ju2.nombre="jugador2";break;
+     case "Tecun": this.scImagen(this.lab2, "src/ImagenesP/tecun.png");this.scImagen(this.s2, "src/ImagenesP/tecun.png");ju2.nombre="jugador2";break;
+     case "among": this.scImagen(this.lab2, "src/ImagenesP/among.png");this.scImagen(this.s2, "src/ImagenesP/among.png");ju2.nombre="jugador1";break;
+     case "chucho": this.scImagen(this.lab2, "src/ImagenesP/chucho.png"); this.scImagen(this.s2, "src/ImagenesP/chucho.png");ju2.nombre="jugador1";break;
  }
  switch(personaje3){
      case "Seleccionar": this.scImagen(this.lab3, "");this.scImagen(this.s3, "");break;
-     case "Botella": this.scImagen(this.lab3, "src/ImagenesP/botella2.png");this.scImagen(this.s3, "src/ImagenesP/botella2.png");break;
-     case "Tecun": this.scImagen(this.lab3, "src/ImagenesP/tecun.png");this.scImagen(this.s3, "src/ImagenesP/tecun.png");break;
-     case "among": this.scImagen(this.lab3, "src/ImagenesP/among.png");this.scImagen(this.s3, "src/ImagenesP/among.png");break;
-     case "chucho": this.scImagen(this.lab3, "src/ImagenesP/chucho.png"); this.scImagen(this.s3, "src/ImagenesP/chucho.png");break;
+     case "Botella": this.scImagen(this.lab3, "src/ImagenesP/botella2.png");this.scImagen(this.s3, "src/ImagenesP/botella2.png");ju3.nombre="jugador3";break;
+     case "Tecun": this.scImagen(this.lab3, "src/ImagenesP/tecun.png");this.scImagen(this.s3, "src/ImagenesP/tecun.png");ju3.nombre="jugador3";break;
+     case "among": this.scImagen(this.lab3, "src/ImagenesP/among.png");this.scImagen(this.s3, "src/ImagenesP/among.png");ju3.nombre="jugador3";break;
+     case "chucho": this.scImagen(this.lab3, "src/ImagenesP/chucho.png"); this.scImagen(this.s3, "src/ImagenesP/chucho.png");ju3.nombre="jugador3";break;
  }
  switch(personaje4){
      case "Seleccionar": this.scImagen(this.lab4, "");this.scImagen(this.s4, "");break;
-     case "Botella": this.scImagen(this.lab4, "src/ImagenesP/botella2.png");this.scImagen(this.s4, "src/ImagenesP/botella2.png");break;
-     case "Tecun": this.scImagen(this.lab4, "src/ImagenesP/tecun.png");this.scImagen(this.s4, "src/ImagenesP/tecun.png");break;
-     case "among": this.scImagen(this.lab4, "src/ImagenesP/among.png");this.scImagen(this.s4, "src/ImagenesP/among.png");break;
-     case "chucho": this.scImagen(this.lab4, "src/ImagenesP/chucho.png"); this.scImagen(this.s4, "src/ImagenesP/chucho.png");break;
+     case "Botella": this.scImagen(this.lab4, "src/ImagenesP/botella2.png");this.scImagen(this.s4, "src/ImagenesP/botella2.png");ju4.nombre="jugador4";break;
+     case "Tecun": this.scImagen(this.lab4, "src/ImagenesP/tecun.png");this.scImagen(this.s4, "src/ImagenesP/tecun.png");ju4.nombre="jugador4";break;
+     case "among": this.scImagen(this.lab4, "src/ImagenesP/among.png");this.scImagen(this.s4, "src/ImagenesP/among.png");ju4.nombre="jugador4";break;
+     case "chucho": this.scImagen(this.lab4, "src/ImagenesP/chucho.png"); this.scImagen(this.s4, "src/ImagenesP/chucho.png");ju4.nombre="jugador4";break;
  }
  }
    //////////////////////////////////////// 
@@ -441,7 +478,8 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
           if(ju4.contadorJ>40){         
  int res4=ju4.contadorJ-40;
  ju4.contadorJ=res4; 
- } 
+ int sumaSaldo=ju4.saldo+200; saldo4.setText("Q"+sumaSaldo);ju4.saldo=sumaSaldo;
+ } else{
    switch (ju4.contadorJ) {
             case 1:lab4.setLocation(1270,950);break;case 2:lab4.setLocation(1140,950);break;
             case 3:lab4.setLocation(1020,950);break;case 4:lab4.setLocation(900,950);break;
@@ -464,13 +502,15 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             case 37:lab4.setLocation(1460,661);break;case 38:lab4.setLocation(1460,744);break;
             case 39:lab4.setLocation(1460,827);break;case 40:lab4.setLocation(1440,930);break; 
    }
+          }
    }
     /////////////////////////////////
     public void moverPieza3(){
        if(ju3.contadorJ>40){         
        int res3=ju3.contadorJ-40;
  ju3.contadorJ=res3; 
- } 
+ int sumaSaldo=ju3.saldo+200; saldo3.setText("Q"+sumaSaldo);ju3.saldo=sumaSaldo;
+ } else{
       // System.out.println(ju3.contadorJ);
    switch (ju3.contadorJ) {
              case 1:lab3.setLocation(1210,950);break;case 2:lab3.setLocation(1080,950);break;
@@ -494,14 +534,15 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             case 37:lab3.setLocation(1400,661);break;case 38:lab3.setLocation(1400,744);break;
             case 39:lab3.setLocation(1400,827);break;case 40:lab3.setLocation(1380,930);break;
    }
-  
+       }
    }
     /////////////////////////////////
    public void moverPieza2(){
      if(ju2.contadorJ>40){          
      int res2=ju2.contadorJ-40;
- ju2.contadorJ=res2; 
- } 
+ ju2.contadorJ=res2;
+int sumaSaldo=ju2.saldo+200; saldo2.setText("Q"+sumaSaldo);ju2.saldo=sumaSaldo; 
+ } else{
      //  System.out.println(ju2.contadorJ);
      
    switch (ju2.contadorJ) {
@@ -526,7 +567,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             case 37:lab2.setLocation(1460,621);break;case 38:lab2.setLocation(1460,703);break;
             case 39:lab2.setLocation(1460,786);break;case 40:lab2.setLocation(1440,890);break; 
    }
-     
+     }
    }
    /////////////////////////////////
  
@@ -536,7 +577,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
            int res1=ju1.contadorJ-40;
  ju1.contadorJ=res1;
  int sumaSaldo=ju1.saldo+200; saldo1.setText("Q"+sumaSaldo);ju1.saldo=sumaSaldo;
- } 
+ } else{
     //   System.out.println(ju1.contadorJ);
         
        switch (ju1.contadorJ) {
@@ -561,7 +602,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             case 37:lab1.setLocation(1400,621);break;case 38:lab1.setLocation(1400,703);break;
             case 39:lab1.setLocation(1400,786);break;case 40:lab1.setLocation(1380,890);break;
         }
-     
+       }
     }
     //////////////
     void verificar(){
@@ -659,7 +700,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     }//GEN-LAST:event_HB4StateChanged
 ////
     ///////boton mover
- 
+ Casilla cj;
  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
   
@@ -668,20 +709,38 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
             cant=Integer.parseInt(cantidados.getText()); 
             
             switch(jugadorTlb.getText()){
-             case "j1":  ju1.contadorJ+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4();c1.casillaOP(ju1.contadorJ,ju1.saldo,saldo1);/*tarjetasCasilla(ju1.contadorJ)*/;break;
-             case "j2":  ju2.contadorJ+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4();c2.casillaOP(ju2.contadorJ,ju2.saldo,saldo2); /*tarjetasCasilla(ju2.contadorJ);*/;break;
-             case "j3":  ju3.contadorJ+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4();c3.casillaOP(ju3.contadorJ,ju3.saldo,saldo3); /*tarjetasCasilla(ju3.contadorJ)*/;break;
-             case "j4":  ju4.contadorJ+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();c4.casillaOP(ju4.contadorJ,ju4.saldo,saldo4);/*tarjetasCasilla(ju4.contadorJ);*/;break;
+             case "j1":  ju1.contadorJ+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4();c1.casillaOP(ju1.contadorJ,ju1.saldo,saldo1);
              
-         }
+             break;
+             case "j2":  ju2.contadorJ+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4();c2.casillaOP(ju2.contadorJ,ju2.saldo,saldo2);
+             
+             break;
+             case "j3":  ju3.contadorJ+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4();c3.casillaOP(ju3.contadorJ,ju3.saldo,saldo3);
+             
+             
+             break;
+             case "j4":  ju4.contadorJ+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();c4.casillaOP(ju4.contadorJ,ju4.saldo,saldo4);
+             
+             
+             
+             break;
+             
+          /*   switch(jugadorTlb.getText()){
+             case "j1":  ju1.contadorJ+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4();c1.casillaOP(ju1.contadorJ,ju1.saldo,saldo1);;break;
+             case "j2":  ju2.contadorJ+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4();c2.casillaOP(ju2.contadorJ,ju2.saldo,saldo2); ;break;
+             case "j3":  ju3.contadorJ+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4();c3.casillaOP(ju3.contadorJ,ju3.saldo,saldo3); ;break;
+             case "j4":  ju4.contadorJ+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();c4.casillaOP(ju4.contadorJ,ju4.saldo,saldo4);;break;
+            } */
+            }
      }catch(Exception e){
      JOptionPane.showMessageDialog(null, "debe tirar dados");
      }
-        botonturno.doClick();
+        
           botonturno.setEnabled(true);
           this.jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
-///////////////////////////////
+
+    ///////////////////////////////
     
    //main del juego
     public static void main(String args[]) {
@@ -740,6 +799,12 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     private javax.swing.JLabel labD2;
     private javax.swing.JLabel labDado;
     private javax.swing.JPanel panelFondo;
+    public static javax.swing.JLabel prt1;
+    public static javax.swing.JLabel prt2;
+    public static javax.swing.JLabel prt4;
+    public static javax.swing.JLabel prt5;
+    public static javax.swing.JLabel prt8;
+    public static javax.swing.JLabel prt9;
     private javax.swing.JLabel s1;
     private javax.swing.JLabel s2;
     private javax.swing.JLabel s3;
