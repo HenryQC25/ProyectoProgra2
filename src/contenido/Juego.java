@@ -69,12 +69,35 @@ public class Juego extends javax.swing.JFrame {
         labD2 = new javax.swing.JLabel();
         labD1 = new javax.swing.JLabel();
         cantidados = new javax.swing.JLabel();
-        prt1 = new javax.swing.JLabel();
-        prt5 = new javax.swing.JLabel();
-        prt2 = new javax.swing.JLabel();
-        prt4 = new javax.swing.JLabel();
-        prt9 = new javax.swing.JLabel();
-        prt8 = new javax.swing.JLabel();
+        Prt1 = new javax.swing.JLabel();
+        Prt5 = new javax.swing.JLabel();
+        Prt3 = new javax.swing.JLabel();
+        Prt4 = new javax.swing.JLabel();
+        Prt9 = new javax.swing.JLabel();
+        Prt8 = new javax.swing.JLabel();
+        Prt11 = new javax.swing.JLabel();
+        Prt12 = new javax.swing.JLabel();
+        Prt13 = new javax.swing.JLabel();
+        Prt14 = new javax.swing.JLabel();
+        Prt15 = new javax.swing.JLabel();
+        Prt16 = new javax.swing.JLabel();
+        Prt19 = new javax.swing.JLabel();
+        Prt18 = new javax.swing.JLabel();
+        Prt21 = new javax.swing.JLabel();
+        Prt23 = new javax.swing.JLabel();
+        Prt24 = new javax.swing.JLabel();
+        Prt28 = new javax.swing.JLabel();
+        Prt27 = new javax.swing.JLabel();
+        Prt29 = new javax.swing.JLabel();
+        Prt25 = new javax.swing.JLabel();
+        Prt26 = new javax.swing.JLabel();
+        prt22 = new javax.swing.JLabel();
+        Prt31 = new javax.swing.JLabel();
+        Prt32 = new javax.swing.JLabel();
+        Prt34 = new javax.swing.JLabel();
+        Prt35 = new javax.swing.JLabel();
+        Prt37 = new javax.swing.JLabel();
+        Prt39 = new javax.swing.JLabel();
         botonturno = new javax.swing.JButton();
         HB4 = new javax.swing.JCheckBox();
         HB1 = new javax.swing.JCheckBox();
@@ -156,7 +179,7 @@ public class Juego extends javax.swing.JFrame {
                 labDadoMouseClicked(evt);
             }
         });
-        panelFondo.add(labDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 220, 180));
+        panelFondo.add(labDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 210, 160));
         panelFondo.add(lab2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 890, 60, 50));
         panelFondo.add(lab3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 940, 60, 50));
         panelFondo.add(lab4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 940, 60, 50));
@@ -168,35 +191,150 @@ public class Juego extends javax.swing.JFrame {
         cantidados.setForeground(new java.awt.Color(255, 0, 51));
         panelFondo.add(cantidados, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, 30, 20));
 
-        prt1.setBackground(new java.awt.Color(255, 102, 102));
-        prt1.setText(".");
-        prt1.setOpaque(true);
-        panelFondo.add(prt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 910, 80, 50));
+        Prt1.setBackground(new java.awt.Color(255, 102, 102));
+        Prt1.setText(".");
+        Prt1.setOpaque(true);
+        panelFondo.add(Prt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 830, 30, 30));
 
-        prt5.setBackground(new java.awt.Color(255, 255, 51));
-        prt5.setText(".");
-        prt5.setOpaque(true);
-        panelFondo.add(prt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 910, 80, 50));
+        Prt5.setBackground(new java.awt.Color(255, 255, 51));
+        Prt5.setText(".");
+        Prt5.setOpaque(true);
+        panelFondo.add(Prt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 830, 30, 30));
 
-        prt2.setBackground(new java.awt.Color(255, 255, 51));
-        prt2.setText(".");
-        prt2.setOpaque(true);
-        panelFondo.add(prt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 910, 80, 50));
+        Prt3.setBackground(new java.awt.Color(255, 255, 51));
+        Prt3.setText(".");
+        Prt3.setOpaque(true);
+        panelFondo.add(Prt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 830, 30, 30));
 
-        prt4.setBackground(new java.awt.Color(255, 102, 102));
-        prt4.setText(".");
-        prt4.setOpaque(true);
-        panelFondo.add(prt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 910, 80, 50));
+        Prt4.setBackground(new java.awt.Color(255, 102, 102));
+        Prt4.setText(".");
+        Prt4.setOpaque(true);
+        panelFondo.add(Prt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 830, 30, 30));
 
-        prt9.setBackground(new java.awt.Color(255, 255, 51));
-        prt9.setText(".");
-        prt9.setOpaque(true);
-        panelFondo.add(prt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 910, 80, 50));
+        Prt9.setBackground(new java.awt.Color(255, 255, 51));
+        Prt9.setText(".");
+        Prt9.setOpaque(true);
+        panelFondo.add(Prt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 830, 30, 30));
 
-        prt8.setBackground(new java.awt.Color(255, 102, 102));
-        prt8.setText(".");
-        prt8.setOpaque(true);
-        panelFondo.add(prt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 910, 80, 50));
+        Prt8.setBackground(new java.awt.Color(255, 102, 102));
+        Prt8.setText(".");
+        Prt8.setOpaque(true);
+        panelFondo.add(Prt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 830, 30, 30));
+
+        Prt11.setBackground(new java.awt.Color(255, 255, 51));
+        Prt11.setText(".");
+        Prt11.setOpaque(true);
+        panelFondo.add(Prt11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 800, 30, 30));
+
+        Prt12.setBackground(new java.awt.Color(255, 102, 102));
+        Prt12.setText(".");
+        Prt12.setOpaque(true);
+        panelFondo.add(Prt12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, 30, 30));
+
+        Prt13.setBackground(new java.awt.Color(255, 255, 51));
+        Prt13.setText(".");
+        Prt13.setOpaque(true);
+        panelFondo.add(Prt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 650, 30, 30));
+
+        Prt14.setBackground(new java.awt.Color(255, 102, 102));
+        Prt14.setText(".");
+        Prt14.setOpaque(true);
+        panelFondo.add(Prt14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 30, 30));
+
+        Prt15.setBackground(new java.awt.Color(255, 255, 51));
+        Prt15.setText(".");
+        Prt15.setOpaque(true);
+        panelFondo.add(Prt15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 30, 30));
+
+        Prt16.setBackground(new java.awt.Color(255, 102, 102));
+        Prt16.setText(".");
+        Prt16.setOpaque(true);
+        panelFondo.add(Prt16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 30, 30));
+
+        Prt19.setBackground(new java.awt.Color(255, 102, 102));
+        Prt19.setText(".");
+        Prt19.setOpaque(true);
+        panelFondo.add(Prt19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 30, 30));
+
+        Prt18.setBackground(new java.awt.Color(255, 255, 51));
+        Prt18.setText(".");
+        Prt18.setOpaque(true);
+        panelFondo.add(Prt18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 30, 30));
+
+        Prt21.setBackground(new java.awt.Color(255, 255, 51));
+        Prt21.setText(".");
+        Prt21.setOpaque(true);
+        panelFondo.add(Prt21, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 30, 30));
+
+        Prt23.setBackground(new java.awt.Color(255, 102, 102));
+        Prt23.setText(".");
+        Prt23.setOpaque(true);
+        panelFondo.add(Prt23, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 30, 30));
+
+        Prt24.setBackground(new java.awt.Color(255, 255, 51));
+        Prt24.setText(".");
+        Prt24.setOpaque(true);
+        panelFondo.add(Prt24, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 30, 30));
+
+        Prt28.setBackground(new java.awt.Color(255, 102, 102));
+        Prt28.setText(".");
+        Prt28.setOpaque(true);
+        panelFondo.add(Prt28, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 140, 30, 30));
+
+        Prt27.setBackground(new java.awt.Color(255, 255, 51));
+        Prt27.setText(".");
+        Prt27.setOpaque(true);
+        panelFondo.add(Prt27, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 140, 30, 30));
+
+        Prt29.setBackground(new java.awt.Color(255, 102, 102));
+        Prt29.setText(".");
+        Prt29.setOpaque(true);
+        panelFondo.add(Prt29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 140, 30, 30));
+
+        Prt25.setBackground(new java.awt.Color(255, 102, 102));
+        Prt25.setText(".");
+        Prt25.setOpaque(true);
+        panelFondo.add(Prt25, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 30, 30));
+
+        Prt26.setBackground(new java.awt.Color(255, 102, 102));
+        Prt26.setText(".");
+        Prt26.setOpaque(true);
+        panelFondo.add(Prt26, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 140, 30, 30));
+
+        prt22.setBackground(new java.awt.Color(255, 102, 102));
+        prt22.setText(".");
+        prt22.setOpaque(true);
+        panelFondo.add(prt22, new org.netbeans.lib.awtextra.AbsoluteConstraints(2170, 140, 30, 30));
+
+        Prt31.setBackground(new java.awt.Color(255, 102, 102));
+        Prt31.setText(".");
+        Prt31.setOpaque(true);
+        panelFondo.add(Prt31, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 160, 30, 30));
+
+        Prt32.setBackground(new java.awt.Color(255, 255, 51));
+        Prt32.setText(".");
+        Prt32.setOpaque(true);
+        panelFondo.add(Prt32, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 240, 30, 30));
+
+        Prt34.setBackground(new java.awt.Color(255, 102, 102));
+        Prt34.setText(".");
+        Prt34.setOpaque(true);
+        panelFondo.add(Prt34, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 400, 30, 30));
+
+        Prt35.setBackground(new java.awt.Color(255, 255, 51));
+        Prt35.setText(".");
+        Prt35.setOpaque(true);
+        panelFondo.add(Prt35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 480, 30, 30));
+
+        Prt37.setBackground(new java.awt.Color(255, 255, 51));
+        Prt37.setText(".");
+        Prt37.setOpaque(true);
+        panelFondo.add(Prt37, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 640, 30, 30));
+
+        Prt39.setBackground(new java.awt.Color(255, 255, 51));
+        Prt39.setText(".");
+        Prt39.setOpaque(true);
+        panelFondo.add(Prt39, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 800, 30, 30));
 
         jPanel1.add(panelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1530, 1000));
 
@@ -273,16 +411,16 @@ public class Juego extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 940, -1, -1));
 
-        saldo1.setText("Q.1500");
+        saldo1.setText("1500");
         jPanel1.add(saldo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 100, 100, 30));
 
-        saldo2.setText("Q.1500");
+        saldo2.setText("1500");
         jPanel1.add(saldo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 290, 100, 30));
 
-        saldo3.setText("Q1500.");
+        saldo3.setText("1500");
         jPanel1.add(saldo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 510, 100, 30));
 
-        saldo4.setText("Q.1500");
+        saldo4.setText("1500");
         jPanel1.add(saldo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 690, 100, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 1890, 1000));
@@ -781,6 +919,34 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText("Q"+sumaSaldo);ju2.saldo=sumaSaldo;
     private javax.swing.JCheckBox HB2;
     private javax.swing.JCheckBox HB3;
     private javax.swing.JCheckBox HB4;
+    public static javax.swing.JLabel Prt1;
+    public static javax.swing.JLabel Prt11;
+    public static javax.swing.JLabel Prt12;
+    public static javax.swing.JLabel Prt13;
+    public static javax.swing.JLabel Prt14;
+    public static javax.swing.JLabel Prt15;
+    public static javax.swing.JLabel Prt16;
+    public static javax.swing.JLabel Prt18;
+    public static javax.swing.JLabel Prt19;
+    public static javax.swing.JLabel Prt21;
+    public static javax.swing.JLabel Prt23;
+    public static javax.swing.JLabel Prt24;
+    public static javax.swing.JLabel Prt25;
+    public static javax.swing.JLabel Prt26;
+    public static javax.swing.JLabel Prt27;
+    public static javax.swing.JLabel Prt28;
+    public static javax.swing.JLabel Prt29;
+    public static javax.swing.JLabel Prt3;
+    public static javax.swing.JLabel Prt31;
+    public static javax.swing.JLabel Prt32;
+    public static javax.swing.JLabel Prt34;
+    public static javax.swing.JLabel Prt35;
+    public static javax.swing.JLabel Prt37;
+    public static javax.swing.JLabel Prt39;
+    public static javax.swing.JLabel Prt4;
+    public static javax.swing.JLabel Prt5;
+    public static javax.swing.JLabel Prt8;
+    public static javax.swing.JLabel Prt9;
     private javax.swing.JButton botonturno;
     private javax.swing.JLabel cantidados;
     private javax.swing.JButton iniciarPartida;
@@ -799,20 +965,15 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText("Q"+sumaSaldo);ju2.saldo=sumaSaldo;
     private javax.swing.JLabel labD2;
     private javax.swing.JLabel labDado;
     private javax.swing.JPanel panelFondo;
-    public static javax.swing.JLabel prt1;
-    public static javax.swing.JLabel prt2;
-    public static javax.swing.JLabel prt4;
-    public static javax.swing.JLabel prt5;
-    public static javax.swing.JLabel prt8;
-    public static javax.swing.JLabel prt9;
+    public static javax.swing.JLabel prt22;
     private javax.swing.JLabel s1;
     private javax.swing.JLabel s2;
     private javax.swing.JLabel s3;
     private javax.swing.JLabel s4;
-    private javax.swing.JLabel saldo1;
-    private javax.swing.JLabel saldo2;
-    private javax.swing.JLabel saldo3;
-    private javax.swing.JLabel saldo4;
+    public static javax.swing.JLabel saldo1;
+    public static javax.swing.JLabel saldo2;
+    public static javax.swing.JLabel saldo3;
+    public static javax.swing.JLabel saldo4;
     private javax.swing.JComboBox<String> selecJ1;
     private javax.swing.JComboBox<String> selecJ2;
     private javax.swing.JComboBox<String> selecJ3;
