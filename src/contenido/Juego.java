@@ -616,7 +616,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
           if(ju4.contadorJ>40){         
  int res4=ju4.contadorJ-40;
  ju4.contadorJ=res4; 
- int sumaSaldo=ju4.saldo+200; saldo4.setText("Q"+sumaSaldo);ju4.saldo=sumaSaldo;
+ int sumaSaldo=ju4.saldo+200; saldo4.setText(String.valueOf(sumaSaldo));ju4.saldo=sumaSaldo;
  } else{
    switch (ju4.contadorJ) {
             case 1:lab4.setLocation(1270,950);break;case 2:lab4.setLocation(1140,950);break;
@@ -647,7 +647,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
        if(ju3.contadorJ>40){         
        int res3=ju3.contadorJ-40;
  ju3.contadorJ=res3; 
- int sumaSaldo=ju3.saldo+200; saldo3.setText("Q"+sumaSaldo);ju3.saldo=sumaSaldo;
+ int sumaSaldo=ju3.saldo+200; saldo3.setText(String.valueOf(sumaSaldo));ju3.saldo=sumaSaldo;
  } else{
       // System.out.println(ju3.contadorJ);
    switch (ju3.contadorJ) {
@@ -679,7 +679,7 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
      if(ju2.contadorJ>40){          
      int res2=ju2.contadorJ-40;
  ju2.contadorJ=res2;
-int sumaSaldo=ju2.saldo+200; saldo2.setText("Q"+sumaSaldo);ju2.saldo=sumaSaldo; 
+int sumaSaldo=ju2.saldo+200; saldo2.setText(String.valueOf(sumaSaldo));ju2.saldo=sumaSaldo; 
  } else{
      //  System.out.println(ju2.contadorJ);
      
@@ -714,36 +714,36 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText("Q"+sumaSaldo);ju2.saldo=sumaSaldo;
            
            int res1=ju1.contadorJ-40;
  ju1.contadorJ=res1;
- int sumaSaldo=ju1.saldo+200; saldo1.setText("Q"+sumaSaldo);ju1.saldo=sumaSaldo;
+ int sumaSaldo=ju1.saldo+200; saldo1.setText(String.valueOf(sumaSaldo));ju1.saldo=sumaSaldo;
  } else{
     //   System.out.println(ju1.contadorJ);
         
        switch (ju1.contadorJ) {
-            case 1:lab1.setLocation(1210,910);break;case 2:lab1.setLocation(1080,910);break;
-            case 3:lab1.setLocation(960,910);break;case 4:lab1.setLocation(840,910);break;
-            case 5:lab1.setLocation(710,910);break;case 6:lab1.setLocation (590,910);break;
-            case 7:lab1.setLocation(460,910);break;case 8:lab1.setLocation(340,910);break;
-            case 9:lab1.setLocation(210,910);break;case 10:lab1.setLocation(40,890);break;
-            case 11:lab1.setLocation(30,786);break;case 12:lab1.setLocation(30, 703);break;
-            case 13:lab1.setLocation(30,621);break;case 14:lab1.setLocation(30,541);break;
-            case 15:lab1.setLocation(30,460);break;case 16:lab1.setLocation(30,380);break;
-            case 17:lab1.setLocation(30,299);break;case 18:lab1.setLocation(30,217);break;
-            case 19:lab1.setLocation(30,136);break;case 20:lab1.setLocation(30,10);break;
-            case 21:lab1.setLocation(210,10);break;case 22:lab1.setLocation(340,10);break;
-            case 23:lab1.setLocation(460,10);break;case 24:lab1.setLocation(590,10);break;
-            case 25:lab1.setLocation(710,10);break;case 26:lab1.setLocation(840,10);break;
-            case 27:lab1.setLocation(960,10);break;case 28:lab1.setLocation(1080,10);break;
-            case 29:lab1.setLocation(1210,10);break;case 30:lab1.setLocation(1380,20);break;
-            case 31:lab1.setLocation(1400,136);break;case 32:lab1.setLocation(1400,217);break;
-            case 33:lab1.setLocation(1400,299);break;case 34:lab1.setLocation(1400,380);break;
-            case 35:lab1.setLocation(1400,460);break;case 36:lab1.setLocation(1400,541);break;
-            case 37:lab1.setLocation(1400,621);break;case 38:lab1.setLocation(1400,703);break;
-            case 39:lab1.setLocation(1400,786);break;case 40:lab1.setLocation(1380,890);break;
+            case 1:lab1.setLocation(1210,910);lab1.setVisible(true);break;case 2:lab1.setLocation(1080,910);lab1.setVisible(true);break;
+            case 3:lab1.setLocation(960,910);lab1.setVisible(true);break;case 4:lab1.setLocation(840,910);lab1.setVisible(true);break;
+            case 5:lab1.setLocation(710,910);lab1.setVisible(true);break;case 6:lab1.setLocation (590,910);lab1.setVisible(true);break;
+            case 7:lab1.setLocation(460,910);lab1.setVisible(true);break;case 8:lab1.setLocation(340,910);lab1.setVisible(true);break;
+            case 9:lab1.setLocation(210,910);lab1.setVisible(true);break;case 10:lab1.setLocation(40,890);lab1.setVisible(true);break;
+            case 11:lab1.setLocation(30,786);lab1.setVisible(true);break;case 12:lab1.setLocation(30, 703);lab1.setVisible(true);break;
+            case 13:lab1.setLocation(30,621);lab1.setVisible(true);break;case 14:lab1.setLocation(30,541);lab1.setVisible(true); break;
+            case 15:lab1.setLocation(30,460);lab1.setVisible(true);break;case 16:lab1.setLocation(30,380); lab1.setVisible(true);break;
+            case 17:lab1.setLocation(30,299);lab1.setVisible(true);break;case 18:lab1.setLocation(30,217);lab1.setVisible(true); break;
+            case 19:lab1.setLocation(30,136);lab1.setVisible(true);break;case 20:lab1.setLocation(30,10);lab1.setVisible(true); break;
+            case 21:lab1.setLocation(210,10);lab1.setVisible(true);break;case 22:lab1.setLocation(340,10);lab1.setVisible(true); break;
+            case 23:lab1.setLocation(460,10);lab1.setVisible(true);break;case 24:lab1.setLocation(590,10);lab1.setVisible(true);break;
+            case 25:lab1.setLocation(710,10);lab1.setVisible(true);break;case 26:lab1.setLocation(840,10);lab1.setVisible(true);break;
+            case 27:lab1.setLocation(960,10);lab1.setVisible(true);break;case 28:lab1.setLocation(1080,10);lab1.setVisible(true);break;
+            case 29:lab1.setLocation(1210,10);lab1.setVisible(true);break;case 30:lab1.setLocation(1380,20);lab1.setVisible(true);break;
+            case 31:lab1.setLocation(1400,136);lab1.setVisible(true);break;case 32:lab1.setLocation(1400,217);lab1.setVisible(true);break;
+            case 33:lab1.setLocation(1400,299);lab1.setVisible(true);break;case 34:lab1.setLocation(1400,380);lab1.setVisible(true);break;
+            case 35:lab1.setLocation(1400,460);lab1.setVisible(true);break;case 36:lab1.setLocation(1400,541);lab1.setVisible(true);break;
+            case 37:lab1.setLocation(1400,621);lab1.setVisible(true);break;case 38:lab1.setLocation(1400,703);lab1.setVisible(true);break;
+            case 39:lab1.setLocation(1400,786);lab1.setVisible(true);break;case 40:lab1.setLocation(1380,890);lab1.setVisible(true);break;
         }
        }
     }
     //////////////
-    void verificar(){
+    /*void verificar(){
     int i=JOptionPane.showConfirmDialog(null, "desea comprar zoo aurora");
     if(i==0){
     ju1.saldo=ju1.saldo-60;
@@ -757,7 +757,7 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText("Q"+sumaSaldo);ju2.saldo=sumaSaldo;
          case 2: JOptionPane.showMessageDialog(null, "le toca vanzar");  ;break;
         case 3: verificar();break;
     }
-    }
+    }*/
     /////////////////////////////////
  
  ///////////////////////////////////////////////////////////////////   
@@ -841,23 +841,25 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText("Q"+sumaSaldo);ju2.saldo=sumaSaldo;
  Casilla cj;
  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  
-        try{
+
+        try{ 
+            int s1=Integer.parseInt(saldo1.getText());int s2=Integer.parseInt(saldo2.getText());
+            int s3=Integer.parseInt(saldo3.getText());int s4=Integer.parseInt(saldo4.getText());
             
             cant=Integer.parseInt(cantidados.getText()); 
             
-            switch(jugadorTlb.getText()){
-             case "j1":  ju1.contadorJ+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4();c1.casillaOP(ju1.contadorJ,ju1.saldo,saldo1);
+            switch(jugadorTlb.getText()){  
+             case "j1":  ju1.contadorJ+=cant;moverPieza1();moverPieza2();moverPieza3();moverPieza4();c1.casillaOP(ju1.contadorJ,s1,saldo1);
              
              break;
-             case "j2":  ju2.contadorJ+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4();c2.casillaOP(ju2.contadorJ,ju2.saldo,saldo2);
+             case "j2":  ju2.contadorJ+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4();c2.casillaOP(ju2.contadorJ,s2,saldo2);
              
              break;
-             case "j3":  ju3.contadorJ+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4();c3.casillaOP(ju3.contadorJ,ju3.saldo,saldo3);
+             case "j3":  ju3.contadorJ+=cant;moverPieza3();moverPieza2();moverPieza1();moverPieza4();c3.casillaOP(ju3.contadorJ,s3,saldo3);
              
              
              break;
-             case "j4":  ju4.contadorJ+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();c4.casillaOP(ju4.contadorJ,ju4.saldo,saldo4);
+             case "j4":  ju4.contadorJ+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();c4.casillaOP(ju4.contadorJ,s4,saldo4);
              
              
              
@@ -956,7 +958,7 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText("Q"+sumaSaldo);ju2.saldo=sumaSaldo;
     private javax.swing.JLabel j4;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jugadorTlb;
+    public static javax.swing.JLabel jugadorTlb;
     private javax.swing.JLabel lab1;
     private javax.swing.JLabel lab2;
     private javax.swing.JLabel lab3;
@@ -970,10 +972,10 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText("Q"+sumaSaldo);ju2.saldo=sumaSaldo;
     private javax.swing.JLabel s2;
     private javax.swing.JLabel s3;
     private javax.swing.JLabel s4;
-    public static javax.swing.JLabel saldo1;
-    public static javax.swing.JLabel saldo2;
-    public static javax.swing.JLabel saldo3;
-    public static javax.swing.JLabel saldo4;
+    public javax.swing.JLabel saldo1;
+    public javax.swing.JLabel saldo2;
+    public javax.swing.JLabel saldo3;
+    public javax.swing.JLabel saldo4;
     private javax.swing.JComboBox<String> selecJ1;
     private javax.swing.JComboBox<String> selecJ2;
     private javax.swing.JComboBox<String> selecJ3;
