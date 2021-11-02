@@ -114,6 +114,10 @@ public class Juego extends javax.swing.JFrame {
         saldo2 = new javax.swing.JLabel();
         saldo3 = new javax.swing.JLabel();
         saldo4 = new javax.swing.JLabel();
+        pagar1 = new javax.swing.JButton();
+        pagar2 = new javax.swing.JButton();
+        pagar3 = new javax.swing.JButton();
+        pagar4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(191, 248, 223));
@@ -123,17 +127,29 @@ public class Juego extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        j4.setBackground(new java.awt.Color(255, 153, 153));
+        j4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         j4.setText("jugador4");
-        jPanel1.add(j4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 630, 60, 50));
+        j4.setOpaque(true);
+        jPanel1.add(j4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 650, 80, 30));
 
+        j1.setBackground(new java.awt.Color(255, 153, 153));
+        j1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         j1.setText("jugador1");
+        j1.setOpaque(true);
         jPanel1.add(j1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 60, 80, 30));
 
+        j2.setBackground(new java.awt.Color(255, 153, 153));
+        j2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         j2.setText("jugador2");
+        j2.setOpaque(true);
         jPanel1.add(j2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 250, 80, 30));
 
+        j3.setBackground(new java.awt.Color(255, 153, 153));
+        j3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         j3.setText("jugador3");
-        jPanel1.add(j3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 450, 60, 50));
+        j3.setOpaque(true);
+        jPanel1.add(j3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 470, 80, 30));
 
         selecJ4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Botella", "Tecun", "among", "chucho" }));
         selecJ4.setEnabled(false);
@@ -191,112 +207,134 @@ public class Juego extends javax.swing.JFrame {
         cantidados.setForeground(new java.awt.Color(255, 0, 51));
         panelFondo.add(cantidados, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, 30, 20));
 
-        Prt1.setBackground(new java.awt.Color(255, 102, 102));
+        Prt1.setBackground(new java.awt.Color(0, 153, 255));
+        Prt1.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt1.setText(".");
         Prt1.setOpaque(true);
         panelFondo.add(Prt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 830, 30, 30));
 
-        Prt5.setBackground(new java.awt.Color(255, 255, 51));
+        Prt5.setBackground(new java.awt.Color(0, 153, 255));
+        Prt5.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt5.setText(".");
         Prt5.setOpaque(true);
         panelFondo.add(Prt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 830, 30, 30));
 
-        Prt3.setBackground(new java.awt.Color(255, 255, 51));
+        Prt3.setBackground(new java.awt.Color(0, 153, 255));
+        Prt3.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt3.setText(".");
         Prt3.setOpaque(true);
         panelFondo.add(Prt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 830, 30, 30));
 
-        Prt4.setBackground(new java.awt.Color(255, 102, 102));
+        Prt4.setBackground(new java.awt.Color(0, 153, 255));
+        Prt4.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt4.setText(".");
         Prt4.setOpaque(true);
         panelFondo.add(Prt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 830, 30, 30));
 
-        Prt9.setBackground(new java.awt.Color(255, 255, 51));
+        Prt9.setBackground(new java.awt.Color(0, 153, 255));
+        Prt9.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt9.setText(".");
         Prt9.setOpaque(true);
         panelFondo.add(Prt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 830, 30, 30));
 
-        Prt8.setBackground(new java.awt.Color(255, 102, 102));
+        Prt8.setBackground(new java.awt.Color(0, 153, 255));
+        Prt8.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt8.setText(".");
         Prt8.setOpaque(true);
         panelFondo.add(Prt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 830, 30, 30));
 
-        Prt11.setBackground(new java.awt.Color(255, 255, 51));
+        Prt11.setBackground(new java.awt.Color(0, 153, 255));
+        Prt11.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt11.setText(".");
         Prt11.setOpaque(true);
         panelFondo.add(Prt11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 800, 30, 30));
 
-        Prt12.setBackground(new java.awt.Color(255, 102, 102));
+        Prt12.setBackground(new java.awt.Color(0, 153, 255));
+        Prt12.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt12.setText(".");
         Prt12.setOpaque(true);
         panelFondo.add(Prt12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, 30, 30));
 
-        Prt13.setBackground(new java.awt.Color(255, 255, 51));
+        Prt13.setBackground(new java.awt.Color(0, 153, 255));
+        Prt13.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt13.setText(".");
         Prt13.setOpaque(true);
         panelFondo.add(Prt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 650, 30, 30));
 
-        Prt14.setBackground(new java.awt.Color(255, 102, 102));
+        Prt14.setBackground(new java.awt.Color(0, 153, 255));
+        Prt14.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt14.setText(".");
         Prt14.setOpaque(true);
         panelFondo.add(Prt14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 30, 30));
 
-        Prt15.setBackground(new java.awt.Color(255, 255, 51));
+        Prt15.setBackground(new java.awt.Color(0, 153, 255));
+        Prt15.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt15.setText(".");
         Prt15.setOpaque(true);
         panelFondo.add(Prt15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 30, 30));
 
-        Prt16.setBackground(new java.awt.Color(255, 102, 102));
+        Prt16.setBackground(new java.awt.Color(0, 153, 255));
+        Prt16.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt16.setText(".");
         Prt16.setOpaque(true);
         panelFondo.add(Prt16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 30, 30));
 
-        Prt19.setBackground(new java.awt.Color(255, 102, 102));
+        Prt19.setBackground(new java.awt.Color(0, 153, 255));
+        Prt19.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt19.setText(".");
         Prt19.setOpaque(true);
         panelFondo.add(Prt19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 30, 30));
 
-        Prt18.setBackground(new java.awt.Color(255, 255, 51));
+        Prt18.setBackground(new java.awt.Color(0, 153, 255));
+        Prt18.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt18.setText(".");
         Prt18.setOpaque(true);
         panelFondo.add(Prt18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 30, 30));
 
-        Prt21.setBackground(new java.awt.Color(255, 255, 51));
+        Prt21.setBackground(new java.awt.Color(102, 153, 255));
+        Prt21.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt21.setText(".");
         Prt21.setOpaque(true);
         panelFondo.add(Prt21, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 30, 30));
 
-        Prt23.setBackground(new java.awt.Color(255, 102, 102));
+        Prt23.setBackground(new java.awt.Color(0, 153, 255));
+        Prt23.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt23.setText(".");
         Prt23.setOpaque(true);
         panelFondo.add(Prt23, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 30, 30));
 
-        Prt24.setBackground(new java.awt.Color(255, 255, 51));
+        Prt24.setBackground(new java.awt.Color(0, 153, 255));
+        Prt24.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt24.setText(".");
         Prt24.setOpaque(true);
         panelFondo.add(Prt24, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 30, 30));
 
-        Prt28.setBackground(new java.awt.Color(255, 102, 102));
+        Prt28.setBackground(new java.awt.Color(0, 153, 255));
+        Prt28.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt28.setText(".");
         Prt28.setOpaque(true);
         panelFondo.add(Prt28, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 140, 30, 30));
 
-        Prt27.setBackground(new java.awt.Color(255, 255, 51));
+        Prt27.setBackground(new java.awt.Color(0, 153, 255));
+        Prt27.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt27.setText(".");
         Prt27.setOpaque(true);
         panelFondo.add(Prt27, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 140, 30, 30));
 
-        Prt29.setBackground(new java.awt.Color(255, 102, 102));
+        Prt29.setBackground(new java.awt.Color(0, 153, 255));
+        Prt29.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt29.setText(".");
         Prt29.setOpaque(true);
         panelFondo.add(Prt29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 140, 30, 30));
 
-        Prt25.setBackground(new java.awt.Color(255, 102, 102));
+        Prt25.setBackground(new java.awt.Color(0, 153, 255));
+        Prt25.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt25.setText(".");
         Prt25.setOpaque(true);
         panelFondo.add(Prt25, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 30, 30));
 
-        Prt26.setBackground(new java.awt.Color(255, 102, 102));
+        Prt26.setBackground(new java.awt.Color(0, 153, 255));
+        Prt26.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt26.setText(".");
         Prt26.setOpaque(true);
         panelFondo.add(Prt26, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 140, 30, 30));
@@ -306,32 +344,38 @@ public class Juego extends javax.swing.JFrame {
         prt22.setOpaque(true);
         panelFondo.add(prt22, new org.netbeans.lib.awtextra.AbsoluteConstraints(2170, 140, 30, 30));
 
-        Prt31.setBackground(new java.awt.Color(255, 102, 102));
+        Prt31.setBackground(new java.awt.Color(0, 153, 255));
+        Prt31.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt31.setText(".");
         Prt31.setOpaque(true);
         panelFondo.add(Prt31, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 160, 30, 30));
 
-        Prt32.setBackground(new java.awt.Color(255, 255, 51));
+        Prt32.setBackground(new java.awt.Color(0, 153, 255));
+        Prt32.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt32.setText(".");
         Prt32.setOpaque(true);
         panelFondo.add(Prt32, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 240, 30, 30));
 
-        Prt34.setBackground(new java.awt.Color(255, 102, 102));
+        Prt34.setBackground(new java.awt.Color(0, 153, 255));
+        Prt34.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt34.setText(".");
         Prt34.setOpaque(true);
         panelFondo.add(Prt34, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 400, 30, 30));
 
-        Prt35.setBackground(new java.awt.Color(255, 255, 51));
+        Prt35.setBackground(new java.awt.Color(0, 153, 255));
+        Prt35.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt35.setText(".");
         Prt35.setOpaque(true);
         panelFondo.add(Prt35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 480, 30, 30));
 
-        Prt37.setBackground(new java.awt.Color(255, 255, 51));
+        Prt37.setBackground(new java.awt.Color(0, 153, 255));
+        Prt37.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt37.setText(".");
         Prt37.setOpaque(true);
         panelFondo.add(Prt37, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 640, 30, 30));
 
-        Prt39.setBackground(new java.awt.Color(255, 255, 51));
+        Prt39.setBackground(new java.awt.Color(0, 153, 255));
+        Prt39.setFont(new java.awt.Font("Wide Latin", 1, 12)); // NOI18N
         Prt39.setText(".");
         Prt39.setOpaque(true);
         panelFondo.add(Prt39, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 800, 30, 30));
@@ -411,17 +455,61 @@ public class Juego extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 940, -1, -1));
 
+        saldo1.setBackground(new java.awt.Color(153, 255, 255));
+        saldo1.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
         saldo1.setText("1500");
+        saldo1.setOpaque(true);
         jPanel1.add(saldo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 100, 100, 30));
 
+        saldo2.setBackground(new java.awt.Color(153, 255, 255));
+        saldo2.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
         saldo2.setText("1500");
+        saldo2.setOpaque(true);
         jPanel1.add(saldo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 290, 100, 30));
 
+        saldo3.setBackground(new java.awt.Color(153, 255, 255));
+        saldo3.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
         saldo3.setText("1500");
+        saldo3.setOpaque(true);
         jPanel1.add(saldo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 510, 100, 30));
 
+        saldo4.setBackground(new java.awt.Color(153, 255, 255));
+        saldo4.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
         saldo4.setText("1500");
+        saldo4.setOpaque(true);
         jPanel1.add(saldo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 690, 100, 30));
+
+        pagar1.setText("pagar");
+        pagar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagar1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pagar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 140, -1, -1));
+
+        pagar2.setText("pagar");
+        pagar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagar2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pagar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 330, -1, -1));
+
+        pagar3.setText("pagar");
+        pagar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagar3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pagar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 550, -1, -1));
+
+        pagar4.setText("pagar");
+        pagar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagar4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pagar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 730, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 1890, 1000));
 
@@ -460,8 +548,8 @@ public class Juego extends javax.swing.JFrame {
  ////////////////////////////////////////////////////////
  //dados random del 1 al 6  
  public void dados(){
- dado1=(int)(Math.random()*6)+1;
- dado2=(int)(Math.random()*6)+1;
+ dado1=(int)(Math.random()*3)+1;
+ dado2=(int)(Math.random()*3)+1;
  resultado=dado1+dado2; String resultLab= String.valueOf(resultado);
  cantidados.setText(resultLab);
  }
@@ -613,10 +701,11 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
     
     //////////////////////////////////
     public void moverPieza4(){
+        int saldoj4=Integer.parseInt(saldo4.getText());
           if(ju4.contadorJ>40){         
  int res4=ju4.contadorJ-40;
  ju4.contadorJ=res4; 
- int sumaSaldo=ju4.saldo+200; saldo4.setText(String.valueOf(sumaSaldo));ju4.saldo=sumaSaldo;
+ int sumaSaldo=saldoj4+200; saldo4.setText(String.valueOf(sumaSaldo));saldoj4=sumaSaldo;
  } else{
    switch (ju4.contadorJ) {
             case 1:lab4.setLocation(1270,950);break;case 2:lab4.setLocation(1140,950);break;
@@ -644,10 +733,11 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
    }
     /////////////////////////////////
     public void moverPieza3(){
+        int saldoj3=Integer.parseInt(saldo3.getText());
        if(ju3.contadorJ>40){         
        int res3=ju3.contadorJ-40;
  ju3.contadorJ=res3; 
- int sumaSaldo=ju3.saldo+200; saldo3.setText(String.valueOf(sumaSaldo));ju3.saldo=sumaSaldo;
+int sumaSaldo=saldoj3+200; saldo3.setText(String.valueOf(sumaSaldo));
  } else{
       // System.out.println(ju3.contadorJ);
    switch (ju3.contadorJ) {
@@ -676,10 +766,11 @@ String personaje3=selecJ3.getSelectedItem().toString();String personaje4=selecJ4
    }
     /////////////////////////////////
    public void moverPieza2(){
+       int saldoj2=Integer.parseInt(saldo2.getText());
      if(ju2.contadorJ>40){          
      int res2=ju2.contadorJ-40;
  ju2.contadorJ=res2;
-int sumaSaldo=ju2.saldo+200; saldo2.setText(String.valueOf(sumaSaldo));ju2.saldo=sumaSaldo; 
+int sumaSaldo=saldoj2+200; saldo2.setText(String.valueOf(sumaSaldo));
  } else{
      //  System.out.println(ju2.contadorJ);
      
@@ -710,11 +801,12 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText(String.valueOf(sumaSaldo));ju2.saldo
    /////////////////////////////////
  
     public void moverPieza1(){  
+         int saldoj1=Integer.parseInt(saldo1.getText());
        if(ju1.contadorJ>40){
            
            int res1=ju1.contadorJ-40;
  ju1.contadorJ=res1;
- int sumaSaldo=ju1.saldo+200; saldo1.setText(String.valueOf(sumaSaldo));ju1.saldo=sumaSaldo;
+ int sumaSaldo=saldoj1+200; saldo1.setText(String.valueOf(sumaSaldo));
  } else{
     //   System.out.println(ju1.contadorJ);
         
@@ -742,23 +834,7 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText(String.valueOf(sumaSaldo));ju2.saldo
         }
        }
     }
-    //////////////
-    /*void verificar(){
-    int i=JOptionPane.showConfirmDialog(null, "desea comprar zoo aurora");
-    if(i==0){
-    ju1.saldo=ju1.saldo-60;
-    saldo1.setText("Q"+ju1.saldo);
-    }
-    }
-    //////
-    public void tarjetasCasilla(int cont){
-    switch(cont){
-        case 1: JOptionPane.showConfirmDialog(null, "desea comprar el safari chapin");break;
-         case 2: JOptionPane.showMessageDialog(null, "le toca vanzar");  ;break;
-        case 3: verificar();break;
-    }
-    }*/
-    /////////////////////////////////
+    
  
  ///////////////////////////////////////////////////////////////////   
 //evento click label de gif dados
@@ -865,12 +941,7 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText(String.valueOf(sumaSaldo));ju2.saldo
              
              break;
              
-          /*   switch(jugadorTlb.getText()){
-             case "j1":  ju1.contadorJ+=cant;moverPieza1(); moverPieza2();moverPieza3();moverPieza4();c1.casillaOP(ju1.contadorJ,ju1.saldo,saldo1);;break;
-             case "j2":  ju2.contadorJ+=cant;moverPieza2();moverPieza1();moverPieza3();moverPieza4();c2.casillaOP(ju2.contadorJ,ju2.saldo,saldo2); ;break;
-             case "j3":  ju3.contadorJ+=cant;moverPieza3(); moverPieza2();moverPieza1();moverPieza4();c3.casillaOP(ju3.contadorJ,ju3.saldo,saldo3); ;break;
-             case "j4":  ju4.contadorJ+=cant;moverPieza4();moverPieza1();moverPieza2();moverPieza3();c4.casillaOP(ju4.contadorJ,ju4.saldo,saldo4);;break;
-            } */
+         
             }
      }catch(Exception e){
      JOptionPane.showMessageDialog(null, "debe tirar dados");
@@ -879,6 +950,43 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText(String.valueOf(sumaSaldo));ju2.saldo
           botonturno.setEnabled(true);
           this.jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void pagar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagar1ActionPerformed
+    try{ 
+     int valor=Integer.parseInt(JOptionPane.showInputDialog("pagar j1"));
+     int s1=Integer.parseInt(saldo1.getText());
+     s1+=valor;
+     saldo1.setText(String.valueOf(s1));}catch(Exception e){
+     
+     }
+    }//GEN-LAST:event_pagar1ActionPerformed
+
+    private void pagar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagar2ActionPerformed
+    try{
+     int valor=Integer.parseInt(JOptionPane.showInputDialog("pagar j2"));
+     int s2=Integer.parseInt(saldo2.getText());
+     s2+=valor;
+     saldo2.setText(String.valueOf(s2));}catch(Exception e){
+     }
+    }//GEN-LAST:event_pagar2ActionPerformed
+
+    private void pagar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagar3ActionPerformed
+    try{
+     int valor=Integer.parseInt(JOptionPane.showInputDialog("pagar j3"));
+     int s3=Integer.parseInt(saldo3.getText());
+     s3+=valor;
+     saldo3.setText(String.valueOf(s3));}catch(Exception e){
+     }
+    }//GEN-LAST:event_pagar3ActionPerformed
+
+    private void pagar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagar4ActionPerformed
+     try{
+     int valor=Integer.parseInt(JOptionPane.showInputDialog("pagar j4"));
+     int s4=Integer.parseInt(saldo4.getText());
+     s4+=valor;
+     saldo4.setText(String.valueOf(s4));}catch(Exception e){
+     }
+    }//GEN-LAST:event_pagar4ActionPerformed
 
     ///////////////////////////////
     
@@ -966,6 +1074,10 @@ int sumaSaldo=ju2.saldo+200; saldo2.setText(String.valueOf(sumaSaldo));ju2.saldo
     private javax.swing.JLabel labD1;
     private javax.swing.JLabel labD2;
     private javax.swing.JLabel labDado;
+    private javax.swing.JButton pagar1;
+    private javax.swing.JButton pagar2;
+    private javax.swing.JButton pagar3;
+    private javax.swing.JButton pagar4;
     private javax.swing.JPanel panelFondo;
     public static javax.swing.JLabel prt22;
     private javax.swing.JLabel s1;
