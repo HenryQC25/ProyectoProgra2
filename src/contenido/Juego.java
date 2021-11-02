@@ -548,8 +548,8 @@ public class Juego extends javax.swing.JFrame {
  ////////////////////////////////////////////////////////
  //dados random del 1 al 6  
  public void dados(){
- dado1=(int)(Math.random()*3)+1;
- dado2=(int)(Math.random()*3)+1;
+ dado1=(int)(Math.random()*6)+1;
+ dado2=(int)(Math.random()*6)+1;
  resultado=dado1+dado2; String resultLab= String.valueOf(resultado);
  cantidados.setText(resultLab);
  }
