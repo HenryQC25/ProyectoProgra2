@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 public class Casilla {
 
-    Juego jf;
+    Juego jf; //variable para acceder tambien a la ventana Juego y llamar sus atributos
 
 //metodo para agregar icono
     public Icon icono(String ruta, int ancho, int alto) {
@@ -18,9 +18,9 @@ public class Casilla {
     ///////////////////////////// 
 
     /////////////////////////////////////////////////// 
-    public int randomTJ(int saldo1, JLabel lab) {
+    public int randomTJ(int saldo1, JLabel lab) {   //para cajas misteriosas genera una carta aleatoria que influye en el jugador de turno
 
-        int res = (int) (Math.random() * 6) + 1;
+        int res = (int) (Math.random() * 6) + 1; //random del 1 al 6
         switch (res) {
             case 1:
                 JOptionPane.showMessageDialog(null, "  ", "xd", JOptionPane.INFORMATION_MESSAGE, icono("/tarjetas/pagar.jpg", 160, 165));
@@ -62,23 +62,23 @@ public class Casilla {
         int c;
         String j = jf.jugadorTlb.getText();
 
-        switch (numeroCasilla) {
+        switch (numeroCasilla) { //switch verificando el numero de casilla con el contador
 
             case 1:
                 c = JOptionPane.showConfirmDialog(null, "DESEA_COMPRAR", "xd", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, icono("/tarjetas/safari.png", 150, 165));
 
                 int res1 = 0;
-                if (saldoJ >= 60) {
-                    if (c == 0) {
-                        jf.Prt1.setText(j);
+                if (saldoJ >= 60) {  //verifica que el jugador tenga sufuiciente dinero
+                    if (c == 0) {  //0 es porque presiono si en el confimDialog
+                        jf.Prt1.setText(j);  //todos los prt son casillas de los que compran, nos sirve para validar los propietarios
 
                         JOptionPane.showMessageDialog(null, "comprado");
-                        res1 = saldoJ - 60;
+                        res1 = saldoJ - 60;   //si tiene el dinero genra la resta y coloca en saldo label del jugador en turno 
                         lab.setText(String.valueOf(res1));
                     };
                     saldoJ = res1;
                 } else {
-                    JOptionPane.showMessageDialog(null, "no te alncanza el dinero");
+                    JOptionPane.showMessageDialog(null, "no te alncanza el dinero"); //genera un mensaje y no permite comprar 
                 }
                 break;
 
@@ -131,7 +131,6 @@ public class Casilla {
                 if (saldoJ >= 100) {
                     if (c == 0) {
                         jf.Prt5.setText(j);
-
                         JOptionPane.showMessageDialog(null, "comprado");
                         res6 = saldoJ - 100;
                         lab.setText(String.valueOf(res6));
@@ -599,7 +598,6 @@ public class Casilla {
                 if (!p1.equals(j)) {
                     JOptionPane.showMessageDialog(null, "  ", "xd", JOptionPane.INFORMATION_MESSAGE, icono("/tarjetas/safari.png", 160, 165));
                     JOptionPane.showMessageDialog(null, "debes pagar Q2 a " + p1);
-
                     int res1 = 0;
                     res1 = saldoJ - 2;
                     lab.setText(String.valueOf(res1));
@@ -647,8 +645,8 @@ public class Casilla {
             case 6:
                 String p5 = jf.Prt5.getText();
                 if (!p5.equals(j)) {
-                    JOptionPane.showMessageDialog(null, "  ", "xd", JOptionPane.INFORMATION_MESSAGE, icono("/tarjetas/saJose.png", 160, 165));
-                    JOptionPane.showMessageDialog(null, "debes pagar Q6 a" + p5);
+                    JOptionPane.showMessageDialog(null, "  ", "xd",JOptionPane.INFORMATION_MESSAGE, icono("/tarjetas/saJose.png", 160, 165));
+                    JOptionPane.showMessageDialog(null, "debes pagar Q6 a " + p5);
                     int res6 = 0;
                     res6 = saldoJ - 6;
                     lab.setText(String.valueOf(res6));
@@ -1045,14 +1043,14 @@ public class Casilla {
         }
     }
     //////////////////////////////////////////
-
+//metodo de verificar
     public void casillaOP(int numeroCasilla, int saldoJ, JLabel lab) {
         switch (numeroCasilla) {
             case 1:
-                if (".".equals(jf.Prt1.getText())) {
+                if (".".equals(jf.Prt1.getText())) {   //si la casilla contiene un punto es valido para entrar al metodo comprar 
                     comprar(numeroCasilla, saldoJ, lab);
-                } else if (!".".equals(jf.Prt1.getText())) {
-                    pagar(numeroCasilla, saldoJ, lab);
+                } else if (!".".equals(jf.Prt1.getText())) {   //si es distinto ejemplificando ya tiene un valor como j1 etc, enotnces debe entrar a pagar
+                    pagar(numeroCasilla, saldoJ, lab);   
                 }
                 break;
             case 2:
@@ -1226,6 +1224,9 @@ public class Casilla {
                 break;
             case 30:
                 JOptionPane.showMessageDialog(null, " Pagas Q50 de multa ", "xd", JOptionPane.INFORMATION_MESSAGE, icono("/tarjetas/carcel.jpg", 160, 165));
+                int rescarcel = 0;
+                rescarcel = saldoJ - 50;
+                lab.setText(String.valueOf(rescarcel));
                 break;
             case 31:
                 if (".".equals(jf.Prt31.getText())) {

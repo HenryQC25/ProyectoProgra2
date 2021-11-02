@@ -1,5 +1,4 @@
 package contenido;
-
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.Icon;
@@ -526,7 +525,7 @@ public class Juego extends javax.swing.JFrame {
 
         Image imagen;
 
-        public void paint(Graphics i) {
+        public void paint(Graphics i) {  //parametros (imagen, ancho, altura)
             imagen = new ImageIcon(getClass().getResource("/ImagenesP/fondoTablero.png")).getImage();
             i.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
             setOpaque(false);  //getWidth() y getHeigth() adopta el tamaño del panel
@@ -534,7 +533,7 @@ public class Juego extends javax.swing.JFrame {
         }
 
     }
-    fondoPanel fondo = new fondoPanel(); //sirve para editar desde el panel de diseño 
+    fondoPanel fondo = new fondoPanel(); //sirve para editar desde el panel de diseño  //hay que ir al custom del panel y agregarlo
     ////////////////
 
     class fondoPanel1 extends JPanel {
@@ -618,7 +617,7 @@ public class Juego extends javax.swing.JFrame {
     //opciones para seleccionar personaje
 
     public void seleccionarPersonaje() {
-        String personaje1 = selecJ1.getSelectedItem().toString();
+        String personaje1 = selecJ1.getSelectedItem().toString();    //items almacenados en Jcombobox
         String personaje2 = selecJ2.getSelectedItem().toString();
         String personaje3 = selecJ3.getSelectedItem().toString();
         String personaje4 = selecJ4.getSelectedItem().toString();
@@ -667,12 +666,12 @@ public class Juego extends javax.swing.JFrame {
             case "among":
                 this.scImagen(this.lab2, "src/ImagenesP/among.png");
                 this.scImagen(this.s2, "src/ImagenesP/among.png");
-                ju2.nombre = "jugador1";
+                ju2.nombre = "jugador2";
                 break;
             case "chucho":
                 this.scImagen(this.lab2, "src/ImagenesP/chucho.png");
                 this.scImagen(this.s2, "src/ImagenesP/chucho.png");
-                ju2.nombre = "jugador1";
+                ju2.nombre = "jugador2";
                 break;
         }
         switch (personaje3) {
@@ -1412,7 +1411,7 @@ public class Juego extends javax.swing.JFrame {
 //evento click label de gif dados
     private void labDadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labDadoMouseClicked
 
-        this.labD1.setVisible(true);
+        this.labD1.setVisible(true);   //activa label de dados
         this.labD2.setVisible(true);
         dados();
         carasDados();
@@ -1495,22 +1494,22 @@ public class Juego extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         try {
-            int s1 = Integer.parseInt(saldo1.getText());
+            int s1 = Integer.parseInt(saldo1.getText());    //valor de los saldos
             int s2 = Integer.parseInt(saldo2.getText());
             int s3 = Integer.parseInt(saldo3.getText());
             int s4 = Integer.parseInt(saldo4.getText());
 
-            cant = Integer.parseInt(cantidados.getText());
+            cant = Integer.parseInt(cantidados.getText()); //cantidad de los label dados en cant que es nuestra variable global
 
-            switch (jugadorTlb.getText()) {
+            switch (jugadorTlb.getText()) {  //jugadorTlb es el label que muestra turnos en el frame
                 case "j1":
-                    ju1.contadorJ += cant;
-                    moverPieza1();
+                    ju1.contadorJ += cant; //para avanzar correctamente el contador de cada jugador incrementa y se resetea en la funcion de movimiento 
+                    moverPieza1(); //metodos o funciones para vanzar y actualizar posicion de las piezas segun fueron seleccionadas o habilitadas
                     moverPieza2();
                     moverPieza3();
                     moverPieza4();
-                    c1.casillaOP(ju1.contadorJ, s1, saldo1);
-
+                    c1.casillaOP(ju1.contadorJ, s1, saldo1); //pasa parmetros para la clase casilla y empezar a mostrar tarjetas
+                                                   //saldo# solo es el de saldo del jugador label
                     break;
                 case "j2":
                     ju2.contadorJ += cant;
@@ -1551,7 +1550,7 @@ public class Juego extends javax.swing.JFrame {
 
     private void pagar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagar1ActionPerformed
         try {
-            int valor = Integer.parseInt(JOptionPane.showInputDialog("pagar j1"));
+            int valor = Integer.parseInt(JOptionPane.showInputDialog("pagar j1"));   //para poder pagar por un problema que surgio se debe hacer manualmente
             int s1 = Integer.parseInt(saldo1.getText());
             s1 += valor;
             saldo1.setText(String.valueOf(s1));
